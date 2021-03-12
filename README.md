@@ -6,5 +6,16 @@
 
 ## Descrição do repositório:
 
-Completar
+Este repositório consiste em duas pastas:
+1. Apostila de Notas de Aula
+  - Material desenvolvido pelo monitor com base em suas próprias anotações de aula e consultas ao livro *Álgebra Linear e suas aplicações de Gilbert Strang*
+  - Este material **não substitui** o material desenvolvido pelo professor ou a bibliografia recomendada. Ele deve ser usado como mais uma nova consulta.
+2. Scripts do MATLAB
+  - Scripts desenvolvidos ao longo das monitorias de sexta-feira.
+  - Nesta pasta também estarão disponíveis quaisquer anotações realizadas durante as monitorias.
+
+## Comentários finais
+
+Qualquer dúvida ou correção a ser feita no material deve ser avisada para o monitor da disciplina pelo email matnogueira@gmail.com
+Caso algum aluno tenha meu telefone, fique à vontade para mandar mensagens!
 
