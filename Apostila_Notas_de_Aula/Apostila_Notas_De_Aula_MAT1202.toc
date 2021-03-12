@@ -1,0 +1,8 @@
+\babel@toc {brazil}{}
+\contentsline {section}{\numberline {1}Sistemas Lineares e Eliminação Gaussiana}{2}%
+\contentsline {subsection}{\numberline {1.1}Sistemas Lineares e Notação Matricial}{2}%
+\contentsline {subsection}{\numberline {1.2}Solução de um Sistema Linear}{2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Operações Elementares}{3}%
+\contentsline {subsubsection}{\numberline {1.2.2}Matrizes das operações elementares}{3}%
+\contentsline {subsection}{\numberline {1.3}Exemplo}{4}%
+\contentsline {subsection}{\numberline {1.4}Conclusão}{5}%

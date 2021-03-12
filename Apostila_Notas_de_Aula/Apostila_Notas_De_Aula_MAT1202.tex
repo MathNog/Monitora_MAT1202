@@ -1,0 +1,296 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[a4paper,left=3cm, right=2cm,top=3cm, bottom=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{authblk}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+
+\title{\textbf{Monitoria MAT1202 - Álgebra Linear 2 \\Apostila Notas de Aula }}
+
+\author[]{\textbf{Matheus Nogueira}}
+
+\date{}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{{\small \textcolor{gray}{Apostila Monitoria MAT1202}}}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+\begin{document}
+\maketitle
+\begin{abstract}
+	Este documento consiste nas notas de aula da monitoria de MAT1202. Este material foi produzido com base em minhas anotações do curso de Álgebra Linear 2 do semestre 20.2 e do livro \textit{Álgebra Linear e suas aplicações}, de \textit{Gilbert Strang}. Qualquer dúvida, favor entrar em contato \textit{matnogueira@gmail.com}
+\end{abstract}
+\tableofcontents
+\pagebreak
+\section{Sistemas Lineares e Eliminação Gaussiana}
+\subsection{Sistemas Lineares e Notação Matricial}
+
+Nosso foco é estudar sistemas de equações da forma $Ax=b$, onde $A$ é a matriz com os termos que acompanham as variáveis (incógnitas), $x$ é o vetor coluna com as incógnitas e $b$ é o vetor coluna com os termos independentes.\\
+
+\textbf{Exemplo:} Seja o seguinte sistema de equações...
+
+\begin{align*}
+	x+2y+3&=2\\-x+y-z&=-3\\2x+y-z&=0
+\end{align*}
+
+Escrevê-lo em forma matricial é definir as seguinte matriz e vetores:
+\begin{equation*}
+	A=
+	\begin{bmatrix}
+		1 & 2 & 3\\
+		-1 & 1 & -1\\
+		2 & 1 & -1
+	\end{bmatrix} \mbox{, } 
+	x=
+	\begin{bmatrix}
+		x\\ y\\z
+	\end{bmatrix} \mbox{ e } 
+	b=
+	\begin{bmatrix}
+		2 \\ -3\\0
+	\end{bmatrix}
+\end{equation*}
+
+Não é difícil perceber que a multiplicação representada por $Ax$ resulta exatamente no sistema linear inicial.
+
+\subsection{Solução de um Sistema Linear}
+
+Nossa estratégia para calcular a solução de um sistema de equações lineares será a \textbf{Eliminação Gaussiana}. 
+
+Este método consiste em realizar operações na matriz do sistema $Ax=b$, chamadas \textit{operações elementares}, para chegar a um \textit{sistema triangular}. Ao ser obtido este sistema, basta realizar uma série de substituições retroativas para chegar à solução.\\
+
+\textbf{Definição:} Matrizes Triangulares
+
+Uma matriz é triangular - superior ou inferior - se todas as entradas abaixo ou acima, respectivamente, da diagonal principal são nulas. A matriz $A$ abaixo é triangular superior, enquanto que $B$ é triangular inferior.
+
+\begin{equation*}
+	A=
+	\begin{bmatrix}
+		1 & 2 & 3\\
+		0 & 1 & -1\\
+		0 & 0 & -1
+	\end{bmatrix} \mbox{, } 
+	B=
+	\begin{bmatrix}
+		1 & 0 &0\\
+		-1 & 1 & 0\\
+		2 & 1 & -1
+	\end{bmatrix}
+\end{equation*}
+
+São 3 os possíveis tipos de solução de um sistema linear:
+\begin{enumerate}
+	\item Exatamente 1 solução
+	\item Infinitas Soluções
+	\item Não há solução
+\end{enumerate}
+
+\textbf{Observação:} lembrem-se que, para verificar qual das opções acima é a o caso da matriz a ser estudada, podemos olhar para o \textit{determinante} da matriz. Se seu valor for zero, o sistema possui infinitas soluções ou nenhuma solução. Se for diferente de zero, uma solução.
+
+\subsubsection{Operações Elementares}
+
+\textbf{Definição:}
+dado um sistema linear $Ax=b$, são 3 as operações elementares que não alteram a solução do sistema.
+\begin{enumerate}
+	\item Permutação de linhas ($L_i\leftrightarrow L_j$)
+	\item Multiplicação de linha por escalar ($L_i\rightarrow L_i \cdot k,k \neq 0$)
+	\item Somar um múltiplo de uma linha a outra linha ($L_i \rightarrow L_i+k\cdot L_j$)
+\end{enumerate}
+
+\subsubsection{Matrizes das operações elementares}
+
+Veremos que cada uma das 3 operações elementares descritas pode ser representada por meio de matrizes da seguinte forma:\\
+
+Se queremos realizar a operação elementar $e$ sobre a matriz $A$, devemos realizar a multiplicação $E\cdot A$, onde $E$ é a matriz que representa a operação elementar $e$. \\
+
+Vejamos as como montar as matrizes para as mesmas 3 operações já apresentadas. Por facilidade, usaremos matrizes $3x3$, pois o raciocínio para outras dimensões é o mesmo. Começamos sempre com a matriz identidade e:
+\begin{enumerate}
+	\item Permutação de linhas ($L_i\leftrightarrow L_j$):\\ basta permutar as linhas da matriz identidade de acordo com as linhas a serem permutadas na matriz A
+	\item Multiplicação de linha por escalar ($L_i\rightarrow L_i \cdot k,k \neq 0$):\\ multiplicamos a linha correspondente da matriz identidade pelo escalar em questão.
+	\item Somar um múltiplo de uma linha a outra linha ($L_i \rightarrow L_i+k\cdot L_j$):\\ colocamos na entrada $i,j$ da matriz identidade o valor de $k$ com o devido sinal.
+\end{enumerate}
+
+\begin{align}
+	L_2\leftrightarrow L_3 \implies &
+	\begin{bmatrix}
+		1 & 0 &0\\
+		0 & 1 & 0\\
+		0 & 0 & 1
+	\end{bmatrix} \leftrightarrow 
+	\begin{bmatrix}
+		1 & 0 &0\\
+		0 & 0 & 1\\
+		0 & 1 & 0
+	\end{bmatrix}=E\\
+	L_2\rightarrow L_2 \cdot k\implies &
+	\begin{bmatrix}
+		1 & 0 &0\\
+		0 & 1 & 0\\
+		0 & 0 & 1
+	\end{bmatrix} \leftrightarrow 
+	\begin{bmatrix}
+		1 & 0 &0\\
+		0 & k\cdot 1 & 0\\
+		0 & 0 & 1
+	\end{bmatrix}=E\\
+	L_3 \rightarrow L_3-2\cdot L_1 \implies &
+	\begin{bmatrix}
+		1 & 0 &0\\
+		0 & 1 & 0\\
+		0 & 0 & 1
+	\end{bmatrix} \leftrightarrow 
+	\begin{bmatrix}
+		1 & 0 &0\\
+		0 & 1 & 0\\
+		-2 & 0 & 1
+	\end{bmatrix}=E
+\end{align}\\
+
+Ao final da \textit{Eliminação Gaussiana}, depois de serem realizadas todas as devidas \textit{operações elementares}, a matriz obtida estará na forma \textbf{escalonada}, isto é:
+\begin{enumerate}
+	\item Se existem linhas nulas elas devem ser as últimas da matriz.
+	\item Em quaisquer duas linhas sucessivas não nulas, o pivô (primeiro elemento não nulo) da linha inferior deve estar mais à direita que o da linha superior.
+	\item Abaixo do pivô todas as entradas são nulas.
+\end{enumerate}
+
+\subsection{Exemplo}
+
+Calculemos a solução do seguinte sistema, mostrando as matrizes das operações elementares.
+
+\begin{align*}
+	2x+y+z&=5\\4x-6y&=2\\-2x+7y+2z&=9
+\end{align*}\\
+
+Em forma matricial o sistema é: \\
+
+\begin{equation*}
+	\begin{bmatrix}
+		2 & 1 & 1\\
+		4 & -6 & 0\\
+		-2 & 7 & 2
+	\end{bmatrix} \cdot
+	\begin{bmatrix}
+		x\\ y\\z
+	\end{bmatrix} =
+	\begin{bmatrix}
+		5 \\ -2\\9
+	\end{bmatrix}
+\end{equation*}
+
+
+Seja a matriz aumentada a ser escalonada a seguir: 
+\begin{equation*}
+	\begin{bmatrix}
+		2 & 1 & 1 & 5\\
+		4 & -6 & 0 & -2\\
+		-2 & 7 & 2 & 9
+	\end{bmatrix}
+\end{equation*}
+
+Comecemos as operações elementares para chegar à matriz escalonada. A cada operação, indicaremos a matriz $E$ correspondente.
+
+\begin{equation*}
+	L_2 \rightarrow L_2 -2L_1 \mbox{ sendo } 
+	E_1=\begin{bmatrix}
+		1 & 0 &0\\
+		-2 & 1 & 0\\
+		0 & 0 & 1
+	\end{bmatrix}\\
+\end{equation*}
+Nosso sistema fica...
+\begin{equation*}
+	\begin{bmatrix}
+		2 & 1 & 1 & 5\\
+		0 & -8 & -2 & -12\\
+		-2 & 7 & 2 & 9
+	\end{bmatrix}
+\end{equation*}\\
+
+
+\begin{equation*}
+	L_3 \rightarrow L_3 +L_1 \mbox{ sendo } 
+	E_2=\begin{bmatrix}
+		1 & 0 &0\\
+		0 & 1 & 0\\
+		1 & 0 & 1
+	\end{bmatrix}\\
+\end{equation*}
+Nosso sistema fica...
+\begin{equation*}
+	\begin{bmatrix}
+		2 & 1 & 1 & 5\\
+		0 & -8 & -2 & -12\\
+		0 & 8 & 3 & 14
+	\end{bmatrix}
+\end{equation*}
+
+
+\begin{equation*}
+	L_3 \rightarrow L_3 +L_2 \mbox{ sendo } 
+	E_3=\begin{bmatrix}
+		1 & 0 &0\\
+		0 & 1 & 0\\
+		0 & 1 & 1
+	\end{bmatrix}\\
+\end{equation*}
+Nosso sistema fica...
+\begin{equation*}
+	\begin{bmatrix}
+		2 & 1 & 1 & 5\\
+		0 & -8 & -2 & -12\\
+		0 & 0 & 1 & 2
+	\end{bmatrix}
+\end{equation*}
+
+Chegamos à matriz escalonada. Agora basta realizar algumas substituições retroativas para calcularmos a solução.
+
+Lendo e substituindo o sistema de baixo para cima temos:
+
+\begin{align*}
+	z&=2 \\
+	-8y-2(2)&=-12 \rightarrow y=1 \\
+	2x+1+2&=5 \rightarrow x=1	
+\end{align*}
+
+Note que chegamos a uma solução única, o que faz sentido pois $\det(A)=-16\neq0$
+
+Utilizando as matrizes das operações elementares, chegaríamos na mesma matriz escalonada:
+
+\begin{align*}
+	E_3\cdot E_2 \cdot E_1 \cdot A &\mbox{ , onde A é a matriz aumentada} \\
+	\begin{bmatrix}
+		1 & 0 &0\\
+		0 & 1 & 0\\
+		0 & 1 & 1
+	\end{bmatrix}\cdot
+	\begin{bmatrix}
+		1 & 0 &0\\
+		0 & 1 & 0\\
+		1 & 0 & 1
+	\end{bmatrix} \cdot
+	\begin{bmatrix}
+		1 & 0 &0\\
+		-2 & 1 & 0\\
+		0 & 0 & 1
+	\end{bmatrix} \cdot&
+	\begin{bmatrix}
+		2 & 1 & 1 & 5\\
+		4 & -6 & 0 & -2\\
+		-2 & 7 & 2 & 9
+	\end{bmatrix} = 
+	\begin{bmatrix}
+		2 & 1 & 1 & 5\\
+		0 & -8 & -2 & -12\\
+		0 & 0 & 1 & 2
+	\end{bmatrix}
+\end{align*}
+
+\subsection{Conclusão}
+Com este material sabemos como encontrar a solução de um sistema linear utilizando a Eliminação Gaussiana e as operações Elementares, com suas respectivas matrizes. O próximo assunto a ser abordado será \textbf{Fatoração LU}.
+\end{document}
+
