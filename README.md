@@ -1,4 +1,4 @@
-# Monitora_MAT1202
+# Monitora MAT1202
 ## Repositório para o material da monitoria de MAT1202 - Álgebra Linear 2 PUC-Rio
 ### Monitor: Matheus Nogueira - matnogueira@gmail.com
 ### Professora: Carlos Hugo Jimenez
@@ -17,6 +17,7 @@ Este repositório consiste em duas pastas:
 
 ## Comentários finais
 
-Qualquer dúvida ou correção a ser feita no material deve ser avisada para o monitor da disciplina pelo email matnogueira@gmail.com
+Qualquer dúvida ou correção a ser feita no material deve ser avisada para o monitor da disciplina pelo email matnogueira@gmail.com.
 Caso algum aluno tenha meu telefone, fique à vontade para mandar mensagens!
+Favor não alterar o conteúdo deste repositório sem falar comigo antes.
 
