@@ -292,5 +292,243 @@ Utilizando as matrizes das operações elementares, chegaríamos na mesma matriz
 
 \subsection{Conclusão}
 Com este material sabemos como encontrar a solução de um sistema linear utilizando a Eliminação Gaussiana e as operações Elementares, com suas respectivas matrizes. O próximo assunto a ser abordado será \textbf{Fatoração LU}.
+
+\newpage
+
+
+\section{Fatoração A=LU}
+
+\subsection{Sem permutação de linhas}
+
+No capítulo anterior vimos, ou relembramos,  como resolver um sistema linear utilizando o processo da Eliminação Gaussiana por meio, principalmente, de operações elementares e suas matrizes. Neste capítulo continuaremos estudando sistemas lineares do tipo $Ax=b$ e apresentaremos uma maneira de fatorar a matriz $A$, escrevendo-a como $A=LU$.\\
+
+Dito isso, já podemos definir a matriz $A$ como a matriz de coeficientes do nosso sistema linear, ou seja, exatamente a mesma matriz $A$ do capítulo anterior. Nosso sistema linear é:\\
+\begin{equation*}
+	\begin{bmatrix}
+		a_{11} & a_{12} & a_{13}\\
+		a_{21} & a_{22} & a_{23}\\
+		a_{31} & a_{32} & a_{33}
+	\end{bmatrix} \cdot
+	\begin{bmatrix}
+		x\\ y\\z
+	\end{bmatrix}=
+	\begin{bmatrix}
+		b_{11} \\ b_{21} \\ b_{31}
+	\end{bmatrix} \mbox{ logo, } \newline
+	A=\begin{bmatrix}
+		a_{11} & a_{12} & a_{13}\\
+		a_{21} & a_{22} & a_{23}\\
+		a_{31} & a_{32} & a_{33}
+	\end{bmatrix}
+\end{equation*}\\
+
+A matriz $U$ é a matriz triangular superior que aparece ao final do processo de escalonamento da matriz $A$, obtida por meio das operações elementares. Você deve se lembrar que, em nossa aula 2 de \textit{MATLAB}, aprendemos a função $[\mbox{~},U]=lu(A)$, sendo $U$ o nome dado à variável que guarda o output da função \textit{lu()}, isto é, a matriz escalonada resultante da eliminação gaussiana. Com $U$ em mãos, tudo que nos restava fazer era uma substituição retroativa para descobrir a solução do sistema. \\
+
+A última matriz que falta ser descoberta é $L$. Para isso, precisamos lembrar das matrizes $E_i$ que representam as operações elementares. Se nos recordarmos, para escalonar $A$ até $U$ fazíamos:
+
+\begin{equation*}
+	U=E_n\cdot E_{n-1} \cdot ... \cdot E_2\cdot E_1\cdot A
+\end{equation*}	
+sendo $n$ o número de operações elementares a serem feitas. \\
+
+Chamemos de $E$ a matriz resultante de todas as multiplicações de $E_i$. Podemos reescrever a equação acima como $U=E\cdot A$. Queremos chegar na faturação $A=LU$, logo, não é difícil perceber que basta multiplicar ambos os lados de $U=E\cdot A$ por $E^{-1}$ à esquerda que obteremos algo similar à fatoração desejada.
+\begin{equation*}
+	E^{-1}U=E^{-1}E\cdot A \rightarrow E^{-1}\cdot U=A
+\end{equation*}\\
+
+De fato, a matriz $L$ da fatoração $A=LU$ é, justamente, a multiplicação de todas as inversas das matrizes elementares utilizada. Sendo assim, definimos
+\begin{equation*}
+	L=E_1^{-1}\cdot E_2^{-1}\cdot ... \cdot E_n^{-1}
+\end{equation*}
+
+Convença-se de que $L$ está corretamente definida!
+
+O único empecilho para esta definição é garantir que todas as matrizes elementares são inversíveis. Para isso, seus determinantes devem ser diferentes de 0. Como estamos estudando, nesta seção, apenas o caso sem trocas de linha, é trivial notar que todas as matrizes $E_i$ possuem 1 em sua diagonal principal e são triangulares inferiores. Sendo assim, seus determinantes são sempre 1. Convença-se deste fato.\\
+
+Agora podemos apresentar a versão completa da função do \textit{MATLAB}, $[L,U]=lu(A)$. Esta função retorna, não somente a matriz escalonada $U$, como a matriz $L$, o que faz todo o sentido dado o nome da função... A análise da matriz $L$ é importante para ver se houve trocas de linha na execução interna do algoritmo da função.
+
+Com todas estas definições em mãos, podemos partir para um exemplo.
+\subsubsection{Exemplo}
+Dada a seguinte matriz $A$, calculemos cada uma das matrizes envolvidas na fatoração $A=LU$ e mostremos que essa igualdade vale.
+
+\begin{equation*}
+	A=\begin{bmatrix}
+		1 & 1 & 1\\
+		2 & 3 & 5\\
+		4 & 6 & 8
+	\end{bmatrix} 
+\end{equation*}\\
+
+Realizando seu escalonamento, chegamos às seguintes matrizes elementares:
+
+\begin{equation*}
+	E_1=\begin{bmatrix}
+		1 & 0 & 0\\
+		0 & 1 & 0\\
+		-4 & 0 & 1
+	\end{bmatrix} ;
+	E_2=
+	\begin{bmatrix}
+		1 & 0 & 0\\
+		-2 & 1 & 0\\
+		0 & 0 & 1
+	\end{bmatrix};
+	E_3=
+	\begin{bmatrix}
+		1 & 0 & 0\\
+		0 & 1 & 0\\
+		0 &-2 & 1
+	\end{bmatrix}
+\end{equation*}\\
+
+Podemos verificar (deixo por conta de você, caro aluno) que:
+
+\begin{align*}
+	E_3\cdot E_2\cdot E_1\cdot A=U \mbox{ onde, }
+	U=
+	\begin{bmatrix}
+		1 & 1 & 1\\
+		0 & 1 & 3\\
+		0 & 0 & -2
+	\end{bmatrix}
+\end{align*}	
+
+Note que $U$ é uma matriz triangular superior assim como prevê a teoria! Calculemos agora a matriz $L$.
+
+\begin{align}
+	L=E_1^{-1}\cdot E_2^{-1}\cdot E_3^{-1}=
+	\begin{bmatrix}
+		1 & 0 & 0\\
+		2 & 1 & 0\\
+		4 & 2 & 1
+	\end{bmatrix}
+\end{align}
+
+Como previsto, a matriz $L$ é triangular inferior com todas as entradas da diagonal principal igual a 1.
+
+\textbf{Dica:} para inverter uma matriz elementar basta trocar o sinal da entrada não nula fora da diagonal principal. 
+
+Podemos, por fim, verificar que:
+
+\begin{equation*}
+	L\cdot U=\begin{bmatrix}
+		1 & 0 & 0\\
+		2 & 1 & 0\\
+		4 & 2 & 1
+	\end{bmatrix}\cdot
+	\begin{bmatrix}
+		1 & 1 & 1\\
+		0 & 1 & 3\\
+		0 & 0 & -2
+	\end{bmatrix}=
+	\begin{bmatrix}
+		1 & 1 & 1\\
+		2 & 3 & 5\\
+		4 & 6 & 8
+	\end{bmatrix}=A
+\end{equation*}
+
+\subsection{Fatoração PA=LU (com permutação de linhas)}
+
+Caso seja necessário realizar alguma permutação de linhas a fim de garantir que $U$ será uma matriz escalonada, precisamos corrigir a matriz $A$, introduzindo as permutações necessárias para, então, realizar a fatoração $LU$. Uma vez detectadas as permutações realizadas, podemos carregar essa informação em uma matriz $P$ e multiplicá-la por $A$ de modo que
+\begin{equation*}
+	PA=LU
+\end{equation*}
+
+Vejamos um exemplo.
+
+\subsubsection{Exemplo}
+Dada a seguinte matriz $A$, calculemos cada uma das matrizes envolvidas na fatoração $A=LU$, mostremos que serão necessárias permutações, montemos a matriz $P$ e verifiquemos a validade da igualdade $PA=LU$.
+
+\begin{equation*}
+	A=\begin{bmatrix}
+		1 & 2 & 3\\
+		2 & 4 & 5\\
+		1 & 3 & 4
+	\end{bmatrix}
+\end{equation*}
+
+Para simplificar as contas, usemos a função do \textit{MATLAB} $[L,U]=lu(A)$. O retorno desta função é:
+
+\begin{equation*}
+	L=\begin{bmatrix}
+		0.5 & 0 & 1\\
+		1 & 0 & 0\\
+		0.5 & 1 & 0
+	\end{bmatrix}; U=
+	\begin{bmatrix}
+		2 & 4 & 5\\
+		0 & 1 & 1.5\\
+		0 & 0 & 0.5
+	\end{bmatrix}
+\end{equation*}	
+
+A matriz $L$, neste caso, não é triangular inferior, o que indica que o algoritmo interno da função realizou permutações na matriz $A$. Precisamos, então, montar a matriz $P$ de permutações. Podemos começar trocando as linhas 2 e 3. Para isso, chamemos de $P_1$ a seguinte matriz de modo que...
+
+\begin{equation*}
+	P_1=
+	\begin{bmatrix}
+		1 & 0 & 0\\
+		0 & 0 & 1\\
+		0 & 1 & 0
+	\end{bmatrix} \mbox{ de modo que }
+	P_1\cdot L=
+	\begin{bmatrix}
+		0.5 & 0 & 1\\
+		0.5 & 1 & 0\\
+		1 & 0 & 0
+	\end{bmatrix}
+\end{equation*}
+
+Agora definimos $P_2$ a partir da troca das linhas 1 e 3.
+\begin{equation*}
+	P_2=
+	\begin{bmatrix}
+		0 & 0 & 1\\
+		0 & 1 & 0\\
+		1 & 0 & 0
+	\end{bmatrix} \mbox{ de modo que }
+	P_2\cdot P_1\cdot L=
+	\begin{bmatrix}
+		1 & 0 & 0\\
+		0.5 & 1 & 0\\
+		0.5 & 0 & 1
+	\end{bmatrix}
+\end{equation*}
+
+Definimos, então, $P=P_2\cdot P_1$. O valor da matriz $P$ está exibido logo abaixo.
+
+Agora a matriz L possui as características necessárias segundo a teoria, isto é, ser triangular inferior e possuir todas as entradas da diagonal principal igual a 1.
+
+Podemos, finalmente, verificar que:
+\begin{equation*}
+	PA=LU \leftrightarrow 
+	\begin{bmatrix}
+		0 & 1 & 0\\
+		0 & 0 & 1\\
+		1 & 0 & 0
+	\end{bmatrix}
+	\cdot  
+	\begin{bmatrix}
+		1 & 2 & 3\\
+		2 & 4 & 5\\
+		1 & 3 & 4
+	\end{bmatrix}=
+	\begin{bmatrix}
+		0.5 & 0 & 1\\
+		1 & 0 & 0\\
+		0.5 & 1 & 0
+	\end{bmatrix} \cdot
+	\begin{bmatrix}
+		2 & 4 & 5\\
+		0 & 1 & 1.5\\
+		0 & 0 & 0.5
+	\end{bmatrix}
+\end{equation*}
+
+\subsection{Conclusão}
+Neste capítulo foram apresentados os conceitos de fatoração $A=LU$ em seu caso sem permutação de linhas e $PA=LU$ quando são necessárias essas permutações. Este é um algoritmo importante para a compreensão dos métodos de resolução de sistemas lineares e seu entendimento desmistifica o funcionamento da função $lu()$ utilizada no \textit{MATLAB}.
+
+
 \end{document}
 
