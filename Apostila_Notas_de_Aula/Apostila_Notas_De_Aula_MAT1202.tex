@@ -529,6 +529,162 @@ Podemos, finalmente, verificar que:
 \subsection{Conclusão}
 Neste capítulo foram apresentados os conceitos de fatoração $A=LU$ em seu caso sem permutação de linhas e $PA=LU$ quando são necessárias essas permutações. Este é um algoritmo importante para a compreensão dos métodos de resolução de sistemas lineares e seu entendimento desmistifica o funcionamento da função $lu()$ utilizada no \textit{MATLAB}.
 
+	\section{Espaços Fundamentais de uma Matriz}
+\subsection{Definições:}
 
+Estudaremos os 4 subespaços fundamentais de uma matriz. Para todo este estudo, considere A uma matriz $m\times n$ São eles:
+\begin{enumerate}
+	\item Espaço Coluna, ou Imagem
+	\item Espaço Linha
+	\item Espaço Nulo, ou Núcleo
+	\item Espaço Numo da transposta
+\end{enumerate}
+
+\subsubsection{Espaço Coluna - $Im(A)$}
+O espaço coluna, ou imagem de uma matriz $A$ é o subespaço vetorial gerado pelas colunas da matriz $A$.\\
+
+\textbf{Def:}
+\begin{equation*}
+	Im(A)=\{v \in R^m \mbox{ tal que } A\cdot u=v \mbox{ para algum }u\in R^n\}
+\end{equation*}
+
+É importante lembrar de alguns conceitos como \textit{Espaços e Subespaços Vetoriais} e \textit{Independência Linear}, uma vez que nada garante que as $m$ colunas sejam $LI$ e gerem um espaço de dimensão $m$.\\
+
+\textbf{Base para $Im(A)$:} podemos fazer uma Eliminação Gaussiana de $A$ e observar quais colunas da matriz $U$ resultante deste processo possuem pivôs. Se as colunas $c_i$ de $U$ possuem pivô, então as colunas $c_i$ de $A$ serão base da \textit{Imagem} de $A$. Consegue perceber o por quê?\\
+
+\textbf{Observação Importante:} $Im(A)\neq Im(U)$\\
+
+\textbf{Posto} de uma matriz $A$ é a dimensão da \textit{Imagem} dessa matriz $A$ $\rightarrow posto(A)=dim(Im(A))$
+
+\subsubsection{Espaço Nulo - $N(A)$}
+
+O espaço nulo de $A$ é o espaço vetorial gerado pelos vetores $x$ tal que $A\cdot x=0$.\\
+
+\textbf{Def:}
+\begin{equation*}
+	N(A)=\{x \in R^n \mbox{ tal que }A\cdot x=0\}
+\end{equation*}
+
+\subsubsection{Espaço Linha - $Im(A^T)$}
+
+O espaço linha de $A$ é o espaço vetorial gerado pelos vetores linha de $A$. De modo análogo, é o\textit{ espaço coluna da matriz transposta} de $A$.\\
+
+\textbf{Def:}
+\begin{equation*}
+	Im(A^T)=\{v \in R^m \mbox{ tal que } A\cdot u=v \mbox{ para algum }u\in R^n\}
+\end{equation*}
+
+Outra maneira de encontrar o espaço linha de $A$ é, novamente, por meio da Eliminação Gaussiana. Note que, se $U$ for a matriz escalonada da Eliminação Gaussiana, então o espaço linha de $U$ é igual ao espaço linha de $U$. Isso quer dizer que uma base de $Im(U^T)$ é também base de $Im(A^t)$.
+
+\subsubsection{Espaço Nulo da Transposta- $N(A^T)$}
+
+O espaço nulo da transposta de $A$ é o espaço vetorial gerado pelos vetores $x$ tal que $A^T\cdot x=0$.\\
+
+\textbf{Def:}
+\begin{equation*}
+	N(A^T)=\{x \in R^m \mbox{ tal que }A^T\cdot x=0\}
+\end{equation*}
+
+
+\subsection{Exemplo:}
+
+Encontre os 4 espaços fundamentais da matriz abaixo.
+\begin{equation*}
+	A= 
+	\begin{bmatrix}
+		1 & 1 & 1\\
+		2 & 2 & 2\\
+		3 & 3 & 3
+	\end{bmatrix}	
+\end{equation*}\\
+
+Para encontrar o espaço coluna de $A$, vamos escalonar esta matriz. Podemos usar o comando já aprendido $[,U]=lu(A)$, que nos retorna:
+\begin{equation*}
+	U= 
+	\begin{bmatrix}
+		3 & 3 & 3\\
+		0 & 0 & 0\\
+		0 & 0 & 0
+	\end{bmatrix}	
+\end{equation*}\\
+
+Já podemos perceber a existência de apenas 1 pivô, logo $\textbf{posto(A)=dim(Im(A))=1}$. Com além disso, como o pivô está na primeira coluna de $U$, a base da imagem de $A$ será formada pela primeira coluna de $A$. Também podemos usar a função \textit{colspace(sym((A))} do MATLAB.
+\begin{equation*}
+	\beta_{Im(A)}= 
+	\begin{pmatrix}
+		1\\
+		2\\
+		3
+	\end{pmatrix}	
+\end{equation*}\\
+
+Para o núcleo de $A$ devemos resolver o sistema linear $A\cdot x=0$ e os vetores $x$ que satisfizerem esta igualdade serão nosso núcleo. Analogamente, e para facilitar nossa vida, podemos usar o comando \textit{B=null(sym(A))}, que retorna:
+\begin{equation*}
+	B=
+	\begin{pmatrix}
+		-1 & -1\\
+		1 & 0\\
+		0 & 1
+	\end{pmatrix}	
+\end{equation*}\\
+
+Podemos confirmar esta resposta multiplicando $A*B$ e verificando que esta conta dá \textbf{zero}. \\
+
+\textbf{Base:} para verificar que estes vetores nas colunas de $B$ são base do núcleo, devemos verificar que eles são \textit{LI}. Uma vez confirmado, temos que:
+
+\begin{equation*}
+	\beta_{N(A)}= \{
+	\begin{pmatrix}
+		-1\\
+		1\\
+		0
+	\end{pmatrix},
+	\begin{pmatrix}
+		-1\\
+		0\\
+		1
+	\end{pmatrix}	\}
+\end{equation*}\\
+
+\textbf{Observação:} note que $dim(N(A))=2$. Isso faz sentido pois, lembrando de Álgebra 1, $dim(Im(A))+dim(N(A))=n$.
+
+Para calcularmos o espaço linha, temos duas opções. Primeiro, transpor a matriz $A$ e calcular a imagem desta nova matriz da maneira já explicada. Por exemplo: \textit{colspace(sym(transpose(A)))}. Outra maneira é realizar a fatoração $LU$ e olhar para as linhas de $U$, uma vez que $Im(U^T)=Im(A^T)$. Como já temos o resultado da função $lu(A)$, podemos notar que a primeira linha de $U$ é base do espaço linha de $U$. Logo,
+
+\begin{equation*}
+	\beta_{Im(A^T)}= 
+	\begin{pmatrix}
+		3\\
+		3\\
+		3
+	\end{pmatrix}	
+\end{equation*}\\
+
+Finalmente, para o espaço nulo da transposta, podemos utilizar um processo similar ao cálculo do espaço nulo. Será que \textit{null(sym(transpose(A)))}, que retorna:
+
+\begin{equation*}
+	\begin{pmatrix}
+		-2 & -3\\
+		1 & 0\\
+		0 & 1
+	\end{pmatrix}	
+\end{equation*}\\
+
+Verificamos se estes vetores são, de fato, a base do núcleo da transposta ao verificar que eles satisfazem $transpose(A)\cdot null(symtranspose(A)))=0$ e que eles são $LI$. Por fim, temos
+\begin{equation*}
+	\beta_{N(A)}= \{
+	\begin{pmatrix}
+		-2\\
+		1\\
+		0
+	\end{pmatrix},
+	\begin{pmatrix}
+		-3\\
+		0\\
+		1
+	\end{pmatrix}	\}
+\end{equation*}\\
+
+\subsection{Conclusão}
+Neste capítulo foram apresentados os 4 espaços fundamentais de uma matriz qualquer, bem como os procedimentos necessários para calcular estes subespaços vetoriais. Na próxima aula veremos relações de ortogonalidade entre estes subespaços.
 \end{document}
 
