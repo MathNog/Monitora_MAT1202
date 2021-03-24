@@ -22,7 +22,7 @@ Qualquer dúvida ou correção a ser feita no material deve ser avisada para o m
 
 Caso algum aluno tenha meu telefone, fique à vontade para mandar mensagens!
 
-Caso exista qualquer discordância entre este material e o material disponibilizado pelo professor da disciplina ou disponível na bibliografia, **assuma que este material está errado**.
+Caso exista qualquer discordância entre este material e o material disponibilizado pelo professor da disciplina ou disponível na bibliografia, **assuma que este material está errado**. Confie na bibliografia e/ou no professor :-)
 
 Favor não alterar o conteúdo deste repositório sem falar comigo antes.
 
