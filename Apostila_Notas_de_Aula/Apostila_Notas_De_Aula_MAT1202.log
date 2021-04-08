@@ -1,182 +1,183 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.8.11)  24 MAR 2021 19:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.4.8)  8 APR 2021 16:24
 entering extended mode
 **./Apostila_Notas_De_Aula_MAT1202.tex
 (Apostila_Notas_De_Aula_MAT1202.tex
-LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-06-18>
-("C:\Program Files\MiKTeX\tex/latex/base\article.cls"
-Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
-("C:\Program Files\MiKTeX\tex/latex/base\size12.clo"
-File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18>
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
+File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
-\c@part=\count167
-\c@section=\count168
-\c@subsection=\count169
-\c@subsubsection=\count170
-\c@paragraph=\count171
-\c@subparagraph=\count172
-\c@figure=\count173
-\c@table=\count174
+\c@part=\count179
+\c@section=\count180
+\c@subsection=\count181
+\c@subsubsection=\count182
+\c@paragraph=\count183
+\c@subparagraph=\count184
+\c@figure=\count185
+\c@table=\count186
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
-\bibindent=\dimen134
+\bibindent=\dimen138
 )
-("C:\Program Files\MiKTeX\tex/latex/base\inputenc.sty"
-Package: inputenc 2018/08/11 v1.3c Input encoding file
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2020/08/01 v1.3d Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 )
-("C:\Program Files\MiKTeX\tex/generic/babel\babel.sty"
-Package: babel 2020/07/07 3.46 The Babel package
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2021/03/24 3.56 The Babel package
 
-("C:\Program Files\MiKTeX\tex/generic/babel\babel.def"
-File: babel.def 2020/07/07 3.46 Babel common definitions
-\babel@savecnt=\count175
-\U@D=\dimen135
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def
+File: babel.def 2021/03/24 3.56 Babel common definitions
+\babel@savecnt=\count187
+\U@D=\dimen139
 \l@babelnohyphens=\language79
 
-("C:\Program Files\MiKTeX\tex/generic/babel\txtbabel.def")
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
 \bbl@readstream=\read2
 )
-\bbl@dirlevel=\count176
+\bbl@dirlevel=\count188
 
 *************************************
 * Local config file bblopts.cfg used
 *
-("C:\Program Files\MiKTeX\tex/latex/arabi\bblopts.cfg"
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-(C:\Users\Matheus\AppData\Roaming\MiKTeX\tex/latex/babel-portuges\brazil.ldf
-Language: portuges 2020/05/04 v1.2r Portuguese support from the babel system
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/latex/babel-portuges\brazil.l
+df
+Language: portuges 2021/02/04 v1.2s Portuguese support from the babel system
 Package babel Info: \l@brazil = using hyphenrules for portuguese
 (babel)             (\language56) on input line 111.
 Package babel Info: Making " an active character on input line 143.
 ))
-(C:\Users\Matheus\AppData\Roaming\MiKTeX\tex/latex/geometry\geometry.sty
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
-("C:\Program Files\MiKTeX\tex/latex/graphics\keyval.sty"
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 )
-("C:\Program Files\MiKTeX\tex/generic/iftex\ifvtex.sty"
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
-("C:\Program Files\MiKTeX\tex/generic/iftex\iftex.sty"
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 ))
-\Gm@cnth=\count177
-\Gm@cntv=\count178
-\c@Gm@tempcnt=\count179
-\Gm@bindingoffset=\dimen136
-\Gm@wd@mp=\dimen137
-\Gm@odd@mp=\dimen138
-\Gm@even@mp=\dimen139
-\Gm@layoutwidth=\dimen140
-\Gm@layoutheight=\dimen141
-\Gm@layouthoffset=\dimen142
-\Gm@layoutvoffset=\dimen143
+\Gm@cnth=\count189
+\Gm@cntv=\count190
+\c@Gm@tempcnt=\count191
+\Gm@bindingoffset=\dimen140
+\Gm@wd@mp=\dimen141
+\Gm@odd@mp=\dimen142
+\Gm@even@mp=\dimen143
+\Gm@layoutwidth=\dimen144
+\Gm@layoutheight=\dimen145
+\Gm@layouthoffset=\dimen146
+\Gm@layoutvoffset=\dimen147
 \Gm@dimlist=\toks18
 
-(C:\Users\Matheus\AppData\Roaming\MiKTeX\tex/latex/geometry\geometry.cfg))
-("C:\Program Files\MiKTeX\tex/latex/amsmath\amsmath.sty"
-Package: amsmath 2020/01/20 v2.17e AMS math features
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2020/09/23 v2.17i AMS math features
 \@mathmargin=\skip49
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX\tex/latex/amsmath\amstext.sty"
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
 
-("C:\Program Files\MiKTeX\tex/latex/amsmath\amsgen.sty"
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks19
-\ex@=\dimen144
+\ex@=\dimen148
 ))
-("C:\Program Files\MiKTeX\tex/latex/amsmath\amsbsy.sty"
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen145
+\pmbraise@=\dimen149
 )
-("C:\Program Files\MiKTeX\tex/latex/amsmath\amsopn.sty"
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count180
-LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count181
-\leftroot@=\count182
-LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count183
-\DOTSCASE@=\count184
-LaTeX Info: Redefining \ldots on input line 486.
-LaTeX Info: Redefining \dots on input line 489.
-LaTeX Info: Redefining \cdots on input line 610.
-\Mathstrutbox@=\box45
-\strutbox@=\box46
-\big@size=\dimen146
-LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count185
-\c@MaxMatrixCols=\count186
+\inf@bad=\count192
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count193
+\leftroot@=\count194
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count195
+\DOTSCASE@=\count196
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box47
+\strutbox@=\box48
+\big@size=\dimen150
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count197
+\c@MaxMatrixCols=\count198
 \dotsspace@=\muskip16
-\c@parentequation=\count187
-\dspbrk@lvl=\count188
+\c@parentequation=\count199
+\dspbrk@lvl=\count266
 \tag@help=\toks20
-\row@=\count189
-\column@=\count190
-\maxfields@=\count191
+\row@=\count267
+\column@=\count268
+\maxfields@=\count269
 \andhelp@=\toks21
-\eqnshift@=\dimen147
-\alignsep@=\dimen148
-\tagshift@=\dimen149
-\tagwidth@=\dimen150
-\totwidth@=\dimen151
-\lineht@=\dimen152
+\eqnshift@=\dimen151
+\alignsep@=\dimen152
+\tagshift@=\dimen153
+\tagwidth@=\dimen154
+\totwidth@=\dimen155
+\lineht@=\dimen156
 \@envbody=\toks22
 \multlinegap=\skip50
 \multlinetaggap=\skip51
 \mathdisplay@stack=\toks23
-LaTeX Info: Redefining \[ on input line 2859.
-LaTeX Info: Redefining \] on input line 2860.
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
 )
-("C:\Program Files\MiKTeX\tex/latex/graphics\graphicx.sty"
-Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX\tex/latex/graphics\graphics.sty"
-Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX\tex/latex/graphics\trig.sty"
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX\tex/latex/graphics-cfg\graphics.cfg"
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
 
-("C:\Program Files\MiKTeX\tex/latex/graphics-def\pdftex.def"
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen153
-\Gin@req@width=\dimen154
-)
-(C:\Users\Matheus\AppData\Roaming\MiKTeX\tex/latex/float\float.sty
+\Gin@req@height=\dimen157
+\Gin@req@width=\dimen158
+) (C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count192
+\c@float@type=\count270
 \float@exts=\toks24
-\float@box=\box47
+\float@box=\box49
 \@float@everytoks=\toks25
-\@floatcapt=\box48
+\@floatcapt=\box50
 )
-(C:\Users\Matheus\AppData\Roaming\MiKTeX\tex/latex/preprint\authblk.sty
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/latex/preprint\authblk.sty
 Package: authblk 2001/02/27 1.3 (PWD)
 \affilsep=\skip52
 \@affilsep=\skip53
-\c@Maxaffil=\count193
-\c@authors=\count194
-\c@affil=\count195
+\c@Maxaffil=\count271
+\c@authors=\count272
+\c@affil=\count273
 )
-(C:\Users\Matheus\AppData\Roaming\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
-Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
-s
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
+rs
 \f@nch@headwidth=\skip54
 \f@nch@O@elh=\skip55
 \f@nch@O@erh=\skip56
@@ -187,10 +188,10 @@ s
 \f@nch@O@olf=\skip61
 \f@nch@O@orf=\skip62
 )
-("C:\Program Files\MiKTeX\tex/latex/xcolor\xcolor.sty"
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-("C:\Program Files\MiKTeX\tex/latex/graphics-cfg\color.cfg"
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -204,12 +205,12 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-("C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdfmode.def"
-File: l3backend-pdfmode.def 2020-06-29 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count196
-\l__pdf_internal_box=\box49
-)
-(Apostila_Notas_De_Aula_MAT1202.aux)
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
+tex.def
+File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count274
+\l__pdf_internal_box=\box51
+) (Apostila_Notas_De_Aula_MAT1202.aux)
 \openout1 = `Apostila_Notas_De_Aula_MAT1202.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
@@ -261,31 +262,47 @@ LaTeX Font Info:    ... okay on input line 23.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-("C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii"
+
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count197
-\scratchdimen=\dimen155
-\scratchbox=\box50
-\nofMPsegments=\count198
-\nofMParguments=\count199
+\scratchcounter=\count275
+\scratchdimen=\dimen159
+\scratchbox=\box52
+\nofMPsegments=\count276
+\nofMParguments=\count277
 \everyMPshowfont=\toks26
-\MPscratchCnt=\count266
-\MPscratchDim=\dimen156
-\MPnumerator=\count267
-\makeMPintoPDFobject=\count268
+\MPscratchCnt=\count278
+\MPscratchDim=\dimen160
+\MPnumerator=\count279
+\makeMPintoPDFobject=\count280
 \everyMPtoPDFconversion=\toks27
-) ("C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty"
+)
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-)
-(Apostila_Notas_De_Aula_MAT1202.toc)
+
+(C:\Users\matno\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
+fg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+)) (Apostila_Notas_De_Aula_MAT1202.toc)
 \tf@toc=\write3
 \openout3 = `Apostila_Notas_De_Aula_MAT1202.toc'.
 
  [1
 
-{C:/Users/Matheus/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
+{C:/Users/matno/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[2]
 Underfull \hbox (badness 10000) in paragraph at lines 33--34
 
  []
@@ -296,12 +313,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--66
  []
 
 
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
-Make it at least 14.49998pt.
-We now make it that large for the rest of the document.
-This may cause the page layout to be inconsistent, however.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
 
-[2]
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[3]
 Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
@@ -323,7 +342,15 @@ mr/m/n/12 , de-pois de se-rem re-a-li-za-das to-das as de-vi-das \OT1/cmr/m/it/
 12 operac~oes
  []
 
-[3]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[4]
 Underfull \hbox (badness 10000) in paragraph at lines 167--168
 
  []
@@ -344,7 +371,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 212--213
 
  []
 
-[4] [5]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[5]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[6]
 Underfull \hbox (badness 10000) in paragraph at lines 303--304
 
  []
@@ -379,7 +423,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 346--347
 
  []
 
-[6]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[7]
 Underfull \hbox (badness 10000) in paragraph at lines 360--361
 
  []
@@ -389,7 +441,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 382--383
 
  []
 
-[7] [8]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[8]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[9]
 Underfull \hbox (badness 10000) in paragraph at lines 544--545
 
  []
@@ -419,7 +488,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 570--571
 
  []
 
-[9]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 581--582
 
  []
@@ -439,7 +516,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 619--620
 
  []
 
-[10]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[11]
 Underfull \hbox (badness 10000) in paragraph at lines 629--630
 
  []
@@ -469,30 +554,61 @@ Underfull \hbox (badness 10000) in paragraph at lines 685--686
 
  []
 
-[11] [12] (Apostila_Notas_De_Aula_MAT1202.aux) ) 
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[12]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[13]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[14] (Apostila_Notas_De_Aula_MAT1202.aux) ) 
 Here is how much of TeX's memory you used:
- 3814 strings out of 480790
- 51531 string characters out of 2907049
- 328603 words of memory out of 3000000
- 19788 multiletter control sequences out of 15000+200000
- 539794 words of font info for 49 fonts, out of 3000000 for 9000
+ 3969 strings out of 479321
+ 56085 string characters out of 2856584
+ 393780 words of memory out of 3000000
+ 21389 multiletter control sequences out of 15000+600000
+ 411223 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,14n,45p,588b,305s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program F
-iles/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program 
-Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Apostila_Notas_De_Aula_MAT1202.pdf (12 pages, 190154 bytes).
+ 68i,14n,74p,588b,310s stack positions out of 5000i,500n,10000p,200000b,80000s
+ <C:\Users\matno\AppData\Local\MiKTe
+X\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/matno/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/matno/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/ma
+tno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:
+/Users/matno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi1
+2.pfb><C:/Users/matno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmmi6.pfb><C:/Users/matno/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmmi8.pfb><C:/Users/matno/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmr10.pfb><C:/Users/matno/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/matno/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/matno/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/matno/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/matno/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/User
+s/matno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb
+>
+Output written on Apostila_Notas_De_Aula_MAT1202.pdf (14 pages, 200450 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
+ 105 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
