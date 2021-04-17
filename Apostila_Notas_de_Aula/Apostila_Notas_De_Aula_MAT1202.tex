@@ -755,6 +755,146 @@ Propriedades Importantes:
 \subsection{Conclusão}
 Neste capítulo foram apresentados conceitos de ortogonalidade, produto interno, norma e complementos ortogonais. 
 
+\section{Projeções Ortogonais}
+
+\subsection{Conceitos importantes}
+
+Embora seja provável que estes conceitos já sejam bem conhecidos, vamos apenas relembrar o que são produto interno e sua relação com ortogonalidade, a Desigualdade de  Cauchy-Schwarz e a Desigualdade Triangular.
+
+\textbf{Def:} o produto interno entre dois vetores $u$ e $v$ pode ser definido como:
+
+\begin{equation*}
+	\langle u,v \rangle=\sum_{k=1}^{n}x_k y_k=x_1 y_1+x_2 y_2+...+x_n y_n
+\end{equation*}
+
+Uma outra maneira de definir o mesmo produto interno é:
+\begin{equation*}
+	\langle u,v \rangle=||u||\cdot||v||\cdot cos(\theta)
+\end{equation*},
+
+onde $||u||$ é a norma do vetor $u$ e $\theta$ é o ângulo entre os vetores $u$ e $v$.
+
+A partir desta definição, podemos derivar que dois vetores são ortogonais se e somente se o produto interno entre eles é zero. Isso é justificado por $cos(90)=0$.
+
+\textbf{Def:} Desigualdade de Cauchy-Schwarz em $R^n$
+\begin{equation*}
+	||u\cdot v|| \leq ||u||\cdot||v||
+\end{equation*}
+
+\textbf{Def:} Desigualdade Triangular
+\begin{equation*}
+	||u+ v|| \leq ||u||+||v||
+\end{equation*}
+
+\subsection{Projeção ortogonal sobre um vetor}
+
+Imagine que queiramos projetar um vetor $v$ sobre um vetor $u$. Note que o vetor $w$ da figura \ref{fig:projortog} abaixo é, justamente, o resultado dessa projeção. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{Imagens/projOrtog}
+	\caption{Projeção ortogonal de $v$ em $u$}
+	\label{fig:projortog}
+\end{figure}
+
+Precisamos de duas premissas, as quais são facilmente observadas na figura acima:
+\begin{align*}
+	&w=\alpha\cdot u\\
+	&\langle u,v-w \rangle=0
+\end{align*}
+A maneira de encontrar, explicitamente, $w$ em função de $u$ e $v$, com base nessas premissas, está descrita abaixo:
+\begin{align*}
+	\langle u,v-w \rangle&=0\\
+	\langle u,v-\alpha u \rangle&=0\\
+	u\cdot v - \alpha\cdot u\cdot u&=0\\
+	\alpha\cdot u\cdot u&=u\cdot v\\
+	\alpha&=\dfrac{u\cdot v}{u\cdot u}
+\end{align*}
+
+Sendo assim, temos:
+\begin{equation*}
+	w=\left(\dfrac{u\cdot v}{u\cdot u}\right) \cdot u
+\end{equation*}
+
+Note que o resultado dos produtos internos entre parênteses é um número, garantindo que $w$ e $u$ são paralelos.
+
+\subsubsection{Matriz de Projeção sobre o vetor $u$}
+
+
+Podemos encapsular a projeção ortogonal sobre um vetor $u$ em uma matriz $P$, da seguinte forma:
+\begin{align*}
+	w&=\left(\dfrac{u\cdot v}{u\cdot u}\right) \cdot u\\
+	&=\left(\dfrac{u^{T} v}{u^{T} u}\right) \cdot u\\
+	&=u\left(\dfrac{u^{T} v}{u^{T} u}\right)\\
+	&=\left(\dfrac{u u^{T}}{u^{T} u}\right)v\\
+	&=P\cdot v
+\end{align*}
+
+\subsubsection{Exemplo:}
+Calcule a matriz de projeção sobre o vetor $u=(1,-1,1)$
+\begin{align*}
+	P&=\left(\dfrac{u u^{T}}{u^{T} u}\right)\\
+	P&=\dfrac{1}{3}\begin{pmatrix}
+		1 \\
+		-1 \\
+		1
+	\end{pmatrix}\begin{pmatrix}
+		1 & -1 & 1
+	\end{pmatrix}\\
+	P&=\dfrac{1}{3}\begin{pmatrix}
+		1 & -1 & 1\\
+		-1 & 1 & -1\\ 
+		1 & -1 & 1
+	\end{pmatrix}
+\end{align*}
+
+\subsubsection{Propriedades:}
+
+A matriz $P$ definida possui as seguintes propriedades:
+\begin{enumerate}
+	\item $P$ é simétrica
+	\item $P^2=P$
+	\item Posto($P$)=1
+\end{enumerate}
+
+\subsection{Projeção Ortogonal sobre um subespaço qualquer}
+Considere as matriz $A$ e o vetor $b$ definidos abaixo. Além disso, seja $w$ a projeção ortogonal de $b$ sobre o espaço coluna de $A$.
+\begin{equation*}
+	A=\begin{pmatrix}
+		a_{11} & a_{12} \\
+		a_{21} & a_{22}\\
+		a_{31} & a_{32} 
+	\end{pmatrix},b=\begin{pmatrix}
+		b_{11} \\
+		b_{21} \\
+		b_{31}
+	\end{pmatrix}	
+\end{equation*}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{Imagens/projOrtogEsp}
+	\caption{projeção ortogonal sobre imagem de $A$}
+	\label{fig:projortogesp}
+\end{figure}
+
+
+Note que:
+\begin{enumerate}
+	\item o vetor $b-w$ é ortogonal ao espaço coluna de $A$
+	\item o vetor $b-A\overline{x}$ é ortogonal ao espaço coluna de $A$, sendo $w=A\overline{x}$.
+	\item Logo, $b-A\overline{x}\in $ Núcleo da Transposta de A
+	\item $A^T(b-A\overline{x})=0$
+	\item $A^Tb=A^TA\overline{x} \rightarrow$ Equação Normal
+\end{enumerate}
+\textbf{Obs:} se as colunas de $A$ são $LI$, então $A^TA$ é inversível.
+
+Com isso, chegamos na matriz de projeção sobre o espaço coluna de $A$:
+\begin{equation*}
+	P=A\left(A^TA\right)^{-1}A^T
+\end{equation*}
+\subsection{Conclusão}
+Neste capítulo foram apresentados conceitos projeções ortogonais sobre u vetor e sobre um subespaço vetorial qualquer.
+
 
 \end{document}
 
