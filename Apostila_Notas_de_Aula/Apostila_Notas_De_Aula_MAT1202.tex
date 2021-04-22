@@ -895,6 +895,141 @@ Com isso, chegamos na matriz de projeção sobre o espaço coluna de $A$:
 \subsection{Conclusão}
 Neste capítulo foram apresentados conceitos projeções ortogonais sobre u vetor e sobre um subespaço vetorial qualquer.
 
+\section{Mínimos Quadrados}
+
+\subsection{Motivação}
+
+Como já sabemos, estamos quase sempre interessados em resolver sistemas do tipo $Ax=b$. No entanto, há casos em que a solução deste sistema é impossível. Por exemplo, se o nosso sistema linear for um sistema linear de equações incompatíveis.
+
+\textbf{Def:} Sistemas lineares incompatíveis são sistemas de $m$ equações e $n$ incógnitas onde $m>n$. Outra maneira de olhar para essa definição é pensar em matrizes $A_{mxn}$, as quais possuem $m$ linhas (equações) e $n$ colunas (incógnitas). Sabemos que sistemas desse tipo não possuem solução.
+
+O que fazer, pode ser feito, além de abandonar o problema e ir dormir em paz, é procurar uma solução aproximada de tal modo que o \textbf{erro} desta solução seja o menor possível. 
+
+\textbf{Def:} o erro de uma solução aproximada de um sistema $Ax=b$, é definido como:
+\begin{equation*}
+	||Ax-b|| \mbox{ , onde b é a solução real e Ax é a solução aproximada.}
+\end{equation*}
+
+Perceba que, para casos em que podemos encontrar a solução real do sistema, esse erro é zero, uma vez que $Ax=b$, logo $||Ax-b||=0$.
+
+Mas e quando não é possível encontrar a solução?
+
+\subsection{Relembrando Projeções Ortogonais}
+
+Lembre-se da capítulo passado sobre projeções ortogonais e acrescente um detalhe.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{Imagens/projOrtogEsp}
+	\caption{projeção ortogonal sobre imagem de $A$}
+	\label{fig:projortogesp}
+\end{figure}
+
+No âmbito de minimização de erro, podemos pensar que queremos a menor distância entre a solução real e a aproximada. Sendo assim, a \textit{Projeção Ortogonal} aprendida de mostra muito adequada para esse problema de aproximação.
+
+A própria equação normal $A^TA\overline{x}=A^Tb$ relaciona esses valores. Tenha isso em mente.
+
+\subsection{Mínimos Quadrados}
+
+Uma vez que o sistema linear $Ax=b$ é incompatível, sabemos que $b \notin Col(A)$. Sendo assim, já sabemos que a melhor solução, a que minimiza o erro, será a solução $\overline{x}$ tal que:
+\begin{equation*}
+	A\overline{x}=Proj_{Col(A)}b
+\end{equation*}
+
+Como vimos na aula anterior, podemos definir uma matriz $P$ de projeção sobre o espaço coluna de $A$. Utilizando essa informação, chegamos no seguinte sistema:
+\begin{equation*}
+	A\overline{x}=Pb
+\end{equation*}
+
+Este sistema, agora, é compatível e possui uma solução.
+
+Vejamos, por fim, um exemplo prático de como calcular a melhor reta para um dado conjunto de pontos (regressão linear).
+
+\subsubsection{Exemplo:}
+Encontre a reta que melhor interpola os seguintes pontos:
+\begin{table}[]
+	\centering
+	\begin{tabular}{|l|l|}
+		\hline
+		x  & y \\ \hline
+		-1 & 1 \\ \hline
+		1  & 1 \\ \hline
+		2  & 3 \\ \hline
+	\end{tabular}
+\end{table}
+
+Dados esses pontos, podemos montar o seguinte sistema linear $Ax=y$:
+\begin{equation*}
+	\begin{pmatrix}
+		1 & x_{1} \\
+		1 & x_{2}\\
+		1 & x_{3} 
+	\end{pmatrix}\cdot 
+	\begin{pmatrix}
+		b \\
+		a 
+	\end{pmatrix}=
+	\begin{pmatrix}
+		y_1 \\
+		y_2 \\
+		y_3
+	\end{pmatrix}
+\end{equation*}
+\begin{equation*}
+	\begin{pmatrix}
+		1 & -1 \\
+		1 & 1\\
+		1 & 2 
+	\end{pmatrix}\cdot 
+	\begin{pmatrix}
+		b \\
+		a 
+	\end{pmatrix}=
+	\begin{pmatrix}
+		1 \\
+		1 \\
+		3
+	\end{pmatrix}
+\end{equation*}
+
+Rescrevemos como da seguinte maneira:
+\begin{align*}
+	Ax&=y\\
+	A^TAx&=A^Ty
+\end{align*}
+
+Colocando valores:
+\begin{equation*}
+	\begin{pmatrix}
+		1 &1 &1\\
+		-1 &1& 2
+	\end{pmatrix}
+	\begin{pmatrix}
+		1 & -1 \\
+		1 & 1\\
+		1 & 2 
+	\end{pmatrix}\cdot 
+	\begin{pmatrix}
+		b \\
+		a 
+	\end{pmatrix}=
+	\begin{pmatrix}
+		1 &1 &1\\
+		-1 &1& 2
+	\end{pmatrix}
+	\begin{pmatrix}
+		1 \\
+		1 \\
+		3
+	\end{pmatrix}
+\end{equation*}
+
+Resolvendo o sistema, encontramos $a=\dfrac{4}{7}$ e $b=\dfrac{9}{7}$.\\
+
+Logo, a reta desejada é: $r(x)=\dfrac{4}{7}\cdot x + \dfrac{9}{7}$
+
+\subsection{Conclusão}
+Neste capítulo foi relembrado o conceito de projeções ortogonais sobre um subespaço vetorial qualquer e apresentado o algoritmo de Mínimos Quadrados.
 
 \end{document}
 
