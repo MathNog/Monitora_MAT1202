@@ -1031,5 +1031,86 @@ Logo, a reta desejada é: $r(x)=\dfrac{4}{7}\cdot x + \dfrac{9}{7}$
 \subsection{Conclusão}
 Neste capítulo foi relembrado o conceito de projeções ortogonais sobre um subespaço vetorial qualquer e apresentado o algoritmo de Mínimos Quadrados.
 
+
+\section{Matrizes Ortogonais, Ortogonalização de Grand-Schimdt e Fatoração QR}
+
+\subsection{Matrizes Ortogonais}
+
+Para definir uma matriz ortogonal, precisamos lembrar o que é um conjunto de vetores, ou uma base, se quisermos, ortonormal.\\
+
+\textbf{Def:} uma base $\beta$ de vetores de $R^n$ é dita ortonormal se todos os vetores que a formam possuem, simultaneamente, norma 1 e são ortogonais entre si.\\
+
+Com essa definição, podemos definir tranquilamente uma Matriz Ortogonal.\\
+
+\textbf{Def:} Uma Matriz Ortogonal $A$ é uma matriz cujas colunas formam uma base ortonormal. \\
+
+Algumas propriedades das matrizes ortogonais são importantes para nosso curso.
+
+\subsubsection{Propriedades}
+
+\textbf{(1)} Toda matriz ortogonal $Q$ satisfaz $Q^{T}Q=I$. Dessa propriedade, nota-se que $Q^T=Q^{-1}$\\
+
+\textit{Prova:} note que uma multiplicação matricial é, de certo modo, um produto interno entre as colunas e linhas das matrizes. Sendo assim, como as colunas de $Q$ são ortonormais, $\langle v_i,v^{T}_{j} \rangle=0 \forall i\neq j$, sendo $v_i$ os vetores da coluna de $Q$ e $v_j$ os vetores linhas de $Q^T$. A partir disso mostramos que $Q^TQ=I$.  \\
+
+\textbf{(2)} A multiplicação de uma matriz ortogonal por um vetor preserva o comprimento do vetor $\rightarrow ||Qx||=||x||$. \\
+
+\textit{Dem:} $||Qx||^2 = \langle Qx,Qx \rangle=(Qx)^TQx=x^TQ^TQx=x^Tx=||x||^2$\\
+
+\textbf{(3))} O ângulo entre vetores se preserva por matriz ortogonal.\\
+
+\textit{Dem:} $cos\theta=\dfrac{\langle Qu,Qv \rangle}{||Qu|||Qv|||}=\dfrac{uQ^TQv}{||u|||v|||}=\dfrac{u^Tv}{||u|||v|||}$
+
+\subsection{Ortogonalização de Grand Schimdt}
+
+O processo de ortogonalização de Grand-Schimdt consiste em uma estratégia para, a partir de uma base qualquer $\{a_1,...,a_n\}$, obter uma base ortonormal $\{q_1,...q^n\}$ para o espaço gerado pela base $a$. Temos a seguinte construção:
+\begin{align*}
+	&a_1^{'}=a_1 \rightarrow q_1=\dfrac{a_1^{'}}{||a_1^{'}||}\\
+	&a_2^{'}=a2-(q_1^Ta_2)q_1 \rightarrow q_2=\dfrac{a_2^{'}}{||a_2^{'}||}\\
+	&a_3^{'}=a3-(q_1^Ta_3)q_1 -(q_2^Ta_3)q_2\rightarrow q_3=\dfrac{a_3^{'}}{||a_3^{'}||}\\
+	&a_n^{'}=an-(q_1^Ta_n)q_1 -...-(q_{n-1}^Ta_n)q_{n-1}\rightarrow q_n=\dfrac{a_n^{'}}{||a_n^{'}||}
+\end{align*}
+
+
+\subsection{Fatoração QR}
+
+O processo de ortogonalização de Grand Schimdt nos entrega uma fatoração conhecida como \textbf{fatoração $A=QR$}. Não é difícil imaginar que a matriz $Q$ desta fatoração será a matriz cujas colunas são a base $\{q_1,...q^n\}$ obtida no processo de ortogonalização e $A$ é a matriz cujas colunas são a base $\{a_1,...,a_n\}$.\\
+
+Antes de definirmos a matriz $R$, lembremos:\\	
+
+Se $\{q_1,...q^n\}$ é base ortonormal de $R^N$ e $b$ pertence a esse espaço gerado, então...
+\begin{equation*}
+	b=c_1q_1+c_2+q_2+...+c_nq_n
+\end{equation*}
+onde
+\begin{equation*}
+	c_1=q_1^Tb, c_2=q_2^Tb... c_n=q_n^Tb
+\end{equation*} 
+
+Vejamos como construir a matriz $R$ para o caso de uma base do $R^3$. Esse procedimento é facilmente generalizado para $R^N$.
+
+\textbf{Exemplo:} Seja $\{a,b,c\}$ base para o $R^3$ e $\{q_1,q_2,q^3\}$ base ortonormal obtida via ortogonalização de Grand Schimdt a partir da base $\{a,b,c\}$.\\
+
+Temos que:\\
+
+$a=(q_1^Ta)q_1+(q_2^Ta)q_2+(q_3^Ta)q_3=(q_1^Ta)q_1$\\
+
+A primeira coluna de $R$ será, então, $(q_1^{T}a,0,0)^T$\\
+
+$b=(q_1^Tb)q_1+(q_2^Tb)q_2+(q_3^Tb)q_3=(q_1^Tb)q_1+(q_2^Tb)q_2$\\
+
+A segunda coluna de $R$ será, então, $(q_1^{T}a,q_2^Tb,0)^T$\\
+
+$a=(q_1^Tc)q_1+(q_2^Tc)q_2+(q_3^Tc)q_3$\\
+
+A terceira coluna de $R$ será, então, $(q_1^{T}a,q_2^Tb,q_3^Tc)^T$\\
+
+Logo, $R=\begin{pmatrix}
+	q_1^{T}a & q_1^{T}a & q_1^{T}a\\
+	0 &  q_2^Tb& ,q_2^Tb\\ 
+	0 & 0 & q_3^Tc
+\end{pmatrix}$
+
+\subsection{Conclusão}
+Neste capítulo apresentados os conceitos de Matriz Ortogonal, Processo de Ortogonalização de Grand-Schimdt e Fatoração $A=QR$.
 \end{document}
 

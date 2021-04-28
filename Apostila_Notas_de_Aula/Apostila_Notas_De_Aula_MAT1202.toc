@@ -41,3 +41,9 @@
 \contentsline {subsection}{\numberline {6.3}Mínimos Quadrados}{18}{}%
 \contentsline {subsubsection}{\numberline {6.3.1}Exemplo:}{18}{}%
 \contentsline {subsection}{\numberline {6.4}Conclusão}{19}{}%
+\contentsline {section}{\numberline {7}Matrizes Ortogonais, Ortogonalização de Grand-Schimdt e Fatoração QR}{19}{}%
+\contentsline {subsection}{\numberline {7.1}Matrizes Ortogonais}{19}{}%
+\contentsline {subsubsection}{\numberline {7.1.1}Propriedades}{19}{}%
+\contentsline {subsection}{\numberline {7.2}Ortogonalização de Grand Schimdt}{20}{}%
+\contentsline {subsection}{\numberline {7.3}Fatoração QR}{20}{}%
+\contentsline {subsection}{\numberline {7.4}Conclusão}{21}{}%
