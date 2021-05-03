@@ -47,3 +47,9 @@
 \contentsline {subsection}{\numberline {7.2}Ortogonalização de Grand Schimdt}{20}{}%
 \contentsline {subsection}{\numberline {7.3}Fatoração QR}{20}{}%
 \contentsline {subsection}{\numberline {7.4}Conclusão}{21}{}%
+\contentsline {section}{\numberline {8}Polinômio Característico e Teorema de Cayley Hamilton}{21}{}%
+\contentsline {subsection}{\numberline {8.1}Polinômio Característico}{21}{}%
+\contentsline {subsection}{\numberline {8.2}Teorema de Cayley Hamilton}{22}{}%
+\contentsline {subsubsection}{\numberline {8.2.1}Aplicação 1 - Cálculo da Inversa}{22}{}%
+\contentsline {subsubsection}{\numberline {8.2.2}Aplicação 2 - Divisão de Polinômios}{23}{}%
+\contentsline {subsection}{\numberline {8.3}Conclusão}{24}{}%

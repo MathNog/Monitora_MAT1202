@@ -1112,5 +1112,143 @@ Logo, $R=\begin{pmatrix}
 
 \subsection{Conclusão}
 Neste capítulo apresentados os conceitos de Matriz Ortogonal, Processo de Ortogonalização de Grand-Schimdt e Fatoração $A=QR$.
+
+
+\section{Polinômio Característico e Teorema de Cayley Hamilton}
+
+\subsection{Polinômio Característico}
+
+O polinômio característico de uma matriz é um conceito de extrema importância para a Álgebra Linear. É a partir dele que poderemos definir os conceitos de autovalores e autovetores, que, por sua vez, também são muito importantes. Esses conceitos surgem nas mais variadas aplicações, desde diagonalização de matriz e transformações lineares até cálculo funcional e sistemas de equações de diferenças.
+
+Dito isso, passeamos para a definição de polinômio característico.\\
+
+\textbf{Def:} seja $A$ uma matriz quadrada de dimensões $nxn$. O polinômio característico dessa matriz é definido como:
+\begin{equation*}
+	p(\lambda)=det(\lambda I-A)\mbox{ , onde I é a matriz Identidade de }R^n, \lambda \in R
+\end{equation*}\\
+
+\textbf{Ex:} Calcule o polinômio característico da matriz $A$ abaixo:
+\begin{equation*}
+	A=\begin{pmatrix}
+		a&b\\
+		c&d
+	\end{pmatrix}
+\end{equation*}
+\begin{align*}
+	det(\lambda I-A)&=det
+	\begin{pmatrix}
+		\lambda-a&b\\
+		c&\lambda-d
+	\end{pmatrix}=\\
+	&= (\lambda-a)(\lambda-d)-cb\\
+	&= \lambda^2 -(a+d)\lambda+(ad-bc)
+\end{align*}
+
+Podemos fazer alguns comentários interessantes sobre esse resultado:
+\begin{enumerate}
+	\item O último termo entre parênteses é o determinante da matriz $A$ original.
+	\item $p(0)=det(0\cdot I-A)=det(-A)=det(A\cdot(-I))=det(A)\cdot det(-I)=det(A)\cdot(-1)^n$
+\end{enumerate}
+
+\subsection{Teorema de Cayley Hamilton}
+
+O teorema de Cayley Hamilton é simples de ser demonstrado e diz o seguinte:\\
+
+\textbf{Def:} Se $A$ é uma matriz quadrada $nxn$ e $p(\lambda)$ seu polinômio característico, então $p(A)=0$.\\
+
+\textit{Demonstração:}
+\begin{align*}
+	p(\lambda)&=det(\lambda I-A)\\
+	p(A)&=det(A\cdot I-A)=det(0)=0
+\end{align*}
+
+Esse teorema possui algumas aplicações interessantes que justificam seu estudo. Vejamos duas delas.
+\subsubsection{Aplicação 1 - Cálculo da Inversa}
+
+Vamos direto para um exemplo. Seja a matriz $A$ abaixo. Calcule sua inversa via Teorema de Cayley Hamilton.
+\begin{equation*}
+	A=\begin{pmatrix}
+		1&-1\\
+		2&4
+	\end{pmatrix}
+\end{equation*}
+
+Temos que o polinômio característico dessa matriz é $p(\lambda)=\lambda^2-5\lambda+6$.
+
+A partir de $p(\lambda)$ podemos verificar facilmente que a matriz $A$ é inversível uma vez que o termo independente do polinômio, que corresponde ao determinante de $A$ é diferente de 0. Aplicando o Teorema de Cayley Hamilton temos a seguinte equação. Note que precisamos multiplicar o termo independente pela matriz identidade para a equação fazer sentido!
+
+\begin{equation*}
+	p(A)=0\rightarrow A^2-5A+6I=0
+\end{equation*}
+
+Desenvolvendo...
+
+\begin{align*}
+	A^2-5A&=-6I\\
+	A^{-1}(A^2-5A)&=-6A^{-1}I\\
+	A-5I&=-6A^{-1}\\
+	A^{-1}&=-\dfrac{1}{6}(A-5I)
+\end{align*}
+
+Calculando a inversa do enunciado temos a seguinte resposta:
+\begin{equation*}
+	A^{-1}=\dfrac{1}{6}
+	\begin{pmatrix}
+		4&1\\
+		-2&1
+	\end{pmatrix}
+\end{equation*}
+
+Sabendo que a demonstração genérica do cálculo da matriz inversa via Teorema de Cayley Hamilton não é difícil, ela ficará como um desafio para quem quiser! Qualquer dúvida, não hesite em entrar em contato comigo.
+
+\subsubsection{Aplicação 2 - Divisão de Polinômios}
+
+Vejamos como o conhecimento desse Teorema, somado À divisão de polinômios, nos tora capazes de simplificar a aplicação de um polinômio qualquer em $A$.
+
+Considere $p_2(\lambda)=\lambda^r+a_{r-1}\lambda^{r-1}+...+a_0$ um polinômio qualquer. Podemos simplificar o cálculo de $p_2(A)$ da seguinte forma:
+\begin{equation*}
+	p_2(A)=p(A)\cdot q+ s
+\end{equation*}
+
+A equação acima é a expressão de uma divisão de polinômios, sendo $p(A)$ o polinômio característico de $A$ aplicado em $A$, o que resulta em 0, obviamente, $q$ é o quociente e $s$ é o resto da divisão. Lembremo-nos que o grau de $p_2(A)$ é $r$, de $p(A)$ é $n$, de $q$ é $r-n$ e de $s$ é menor que $n$.
+
+A partir da aplicação do Teorema de Cayley Hamilton, teremos:
+\begin{equation*}
+	p_2(A)=p(A)\cdot q+ s=0q+s=s
+\end{equation*}
+
+
+Vamos a um exemplo!
+
+Seja $A$ a matriz abaixo, $p(\lambda)$ seu polinômio característico e $p_2(\lambda)$ um polinômio definido abaixo. Calculemos $p_2(A)$.
+\begin{align*}
+	A&=\begin{pmatrix}
+		1&-1\\
+		2&4
+	\end{pmatrix}\\
+	p(\lambda)&=\lambda^2-5\lambda+6\\
+	p_2{\lambda}&=\lambda^7-5\lambda^6+6\lambda^5-2\lambda^3+11\lambda^2-16\lambda+5
+\end{align*}
+
+A imagem abaixo exibe o cálculo de $p_2(\lambda)$ simplificado. Peço perdão pela letra...
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\linewidth]{Imagens/aplicacao2}
+	\caption{Cálculo de $q(\lambda)$ e $s(\lambda)$}
+	\label{fig:aplicacao2}
+\end{figure}
+
+Com isso, temos que $p_2(\lambda)=\lambda-1$.\\
+
+Logo,  $p_2(A)=A-1I=\begin{pmatrix}
+	0 & -1 \\
+	2 & 3
+\end{pmatrix}
+$
+
+\subsection{Conclusão}
+Neste capítulo apresentados os conceitos de  Polinômio Característico e Teorema de Cayley Hamilton, além de estudadas algumas aplicações importantes desse teorema. Em seguida, veremos as definições de autovalores e autovetores, uma aula que eu costumo chamar, informalmente, de "autotudo".
+
 \end{document}
 
