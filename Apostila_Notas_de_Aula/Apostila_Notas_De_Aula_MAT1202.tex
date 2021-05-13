@@ -1250,5 +1250,127 @@ $
 \subsection{Conclusão}
 Neste capítulo apresentados os conceitos de  Polinômio Característico e Teorema de Cayley Hamilton, além de estudadas algumas aplicações importantes desse teorema. Em seguida, veremos as definições de autovalores e autovetores, uma aula que eu costumo chamar, informalmente, de "autotudo".
 
+\section{Auto-Tudo}
+
+\subsection{Autovalores e Autovetores}
+
+Como esses conceitos são apresentados e bem trabalhados em Álgebra Linear 1, podemos partir direto para a definição.\\
+
+\textbf{Def:} seja $A$ uma transformação linear de $R^n$ para $R_n$. Chamamos de autovalor o número real $\lambda$ que satisfaz:
+\begin{equation*}
+	T(v)=\lambda v
+\end{equation*}
+
+Além disso, chamamos $v$ de autovetor associado ao autovalor $\lambda$.\\
+
+A partir dessas definições, podemos, em seguida, definir o conceito de subespaço característico.\\
+
+\textbf{Def:} o conjunto de todos os autovetores de $A$ associados a um autovalor $\lambda$ é denominado subespaço característico de $A$ associado a $\lambda$, também representado por $A_{\lambda}$.\\
+
+Dado o nome deste subespaço vetorial, podemos supor que o polinômio característico da matriz $A$ possui alguma relação com seus autovalores e autovetores. Essa relação se dá pelo fato de que as raízes do polinômio característico de $A$, $p(\lambda)=0$ são, justamente, os autovalores de $A$. Note que, devido a essa maneira de calcular os autovalores, sabemos que uma matriz $A$ de dimensões $n\times n$ terá sempre, no máximo, $n$ autovalores. Com os autovalores em mãos, a maneira mais trivial de calcular os autovetores associados é por meio da própria definição de autovetor.
+
+Além disso, os autovetores $v_i$ estão associados aos autovalores $\lambda_i$ da seguinte forma:
+\begin{equation*}
+	(\lambda_iI-A)v_i=0
+\end{equation*}
+
+o que é o mesmo que dizer que...
+\begin{equation*}
+	v_i \in Nucleo(\lambda_iI-A)
+\end{equation*}
+
+Apresentemos mais algumas definições importantes conhecidas como multiplicidades.\\
+
+\textbf{Def:} Multiplicidade Algébrica de $\lambda$ corresponde à quantidade de raízes de $p(\lambda)$ que são iguais a $\lambda$.
+
+\textbf{Def:} Multiplicidade Geométrica de $\lambda$ corresponde à dimensão do autoespaço $A_{\lambda}$.\\
+
+\textit{Exemplos:} vejamos os autovalores, autovetores e multiplicidades das matrizes a seguir.
+
+\begin{equation*}
+	A=\begin{pmatrix}
+		10 & -9 \\
+		4 & -2
+	\end{pmatrix}	
+\end{equation*}
+
+Calculando as raízes de seu polinômio característico encontramos $\lambda_1=\lambda_2=4$. Aplicando a definição, achamos o autovetor associado a esse autovalor $v_1=[1,2]^T$. 
+
+Logo, a multiplicidade algébrica do autovalor 2 é 2, uma vez que sã duas raízes iguais a 2 e a multiplicidade geométrica é igual a 1, pois há apenas 1 autovetor.\\
+
+\begin{equation*}
+	A=\begin{pmatrix}
+		1 & 0 \\
+		0 & 1
+	\end{pmatrix}	
+\end{equation*}
+
+Calculando as raízes de seu polinômio característico encontramos $\lambda_1=\lambda_2=1$. Aplicando a definição, achamos os autovetores associados a esses autovalores $v_1=[1,0]^T$ e $v_2=[0,1]^T$. 
+
+Logo, a multiplicidade algébrica do autovalor 1 é 2, uma vez que sã duas raízes iguais a 2 e a multiplicidade geométrica é igual a 2, pois há 2 autovetores LI.
+
+\subsection{Diagonalização}
+
+Novamente, vamos direto para a definição.\\
+
+\textbf{Def:} uma matriz $A_{n\times n}$ é dita diagonalizável se existe uma matriz $P$ tal que $P^{-1}AP=D$, onde $D$ é uma matriz diagonal.
+
+Se $A$ possui apenas autovetores LI, então:
+\begin{equation*}
+	P=\begin{pmatrix}
+		| & | & |\\
+		v_1 & v_2 & v_n\\
+		| & | & |
+	\end{pmatrix} \mbox{ e }
+	D=\begin{pmatrix}
+		\lambda_1 & 0 & 0 \\
+		0 & \lambda_2 & 0 \\
+		0 & 0 & \lambda_n
+	\end{pmatrix}
+\end{equation*}
+
+O procedimento para encontrar a diagonalização de uma matriz $A$ é:
+\begin{enumerate}
+	\item Encontrar os autovetores LI de $A$, se houver
+	\item Construir a matriz $P$ com esses autovetores nas colunas
+	\item Construir a matriz $D$ como $P^{-1}AP$.
+\end{enumerate}
+
+Vamos enumerar, e não demonstrar, alguns teoremas importantes. 
+
+\textbf{Teorema:} Se $A_{n\times n}$ é quadrada, então são equivalentes as seguintes proposições:
+\begin{enumerate}
+	\item $A$ é diagonalizável
+	\item $A$ possui $n$ autovalores LI, ou seja, $A=MG$
+	\item $R^n=A_{\lambda1}+A_{\lambda2}+...+A_{\lambda n}$ 
+\end{enumerate}
+
+\textbf{Teorema:} se todos os autovalores de $A$ são distintos, então $A$ é diagonalizável.
+
+\textbf{Teorema:} Os autovetores associados a autovalores distintos são LI.
+
+\subsection{Potência de Matrizes}
+
+O conhecimento do conceito de autovalor é um enorme facilitador para o cálculo de potência de matrizes. Vejamos o motivo.
+
+Partindo da definição de uma matriz diagonal, vamos mostrar como calcular $A^2$.
+
+\begin{align*}
+	A&=PDP^{-1}\\
+	A^2&=(PDP^{-1})^2\\
+	A^2&=PDP^{-1}PDP^{-1}\\
+	A^2&=PDDP^{-1}\\
+	A^2&=PD^2P^{-1}
+\end{align*}
+
+Podemos, facilmente, generalizar: $A^n=PD^nP^{-1}$.
+
+Outra pergunta interessante é: quais os autovalores de $A^n$?
+
+A demonstração é muito simples e similar à intuição dada pela potência de matriz acima, então me abstenho que realizá-la aqui. Sendo assim, respondemos que os autovalores de $A^n$ são iguais a $\lambda^n$, sendo $\lambda$ os autovalores de $A$. 
+
+\subsection{Conclusão}
+Neste capítulo foram apresentados os conceitos de  Autovalores e Autovetores, além de algumas aplicações desses conceitos, como a Diagonalização de Matrizes. Nas próximas aulas todos esses conceitos serão muito utilizados para estudarmos cálculo funcional. 
+
 \end{document}
 
