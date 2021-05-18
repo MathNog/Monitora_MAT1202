@@ -1372,5 +1372,68 @@ A demonstração é muito simples e similar à intuição dada pela potência de
 \subsection{Conclusão}
 Neste capítulo foram apresentados os conceitos de  Autovalores e Autovetores, além de algumas aplicações desses conceitos, como a Diagonalização de Matrizes. Nas próximas aulas todos esses conceitos serão muito utilizados para estudarmos cálculo funcional. 
 
+\section{Cálculo Funcional: Caso Diagonalizável}
+
+\subsection{Algumas Definições}
+
+Considere uma matriz quadrada $A_{n\times n}$. O cálculo funcional associa, a cada função, uma matriz $f(A)$. Por exemplo, seja $f: R\rightarrow R$ a função exponencial $f(x)=e^x$. Se $A$ for nossa matriz, quanto vale $f(A)=e^A$?
+
+Como não é ementa deste curso, vamos apenas definir uma série de potências e a Série de Taylor, bem como fornecer as séries de Taylor para algumas funções usuais. Para mais informações em relação a essas séries, a disciplina de Cálculo 4 é a ideal.
+
+\textbf{Def:} Série de Potências é definida por
+\begin{equation*}
+	f(x)=\sum_{n=0}^{\inf}a_{n}x^n
+\end{equation*}
+
+\textbf{Def:} Série de Taylor de uma função $f(x)$ é definida como
+\begin{equation*}
+	f(x)=\sum_{n=0}^{\inf}\dfrac{f^n(x_0)}{n!}(x-x_0)n
+\end{equation*}
+
+onde $f^n(x)$ é a n-ésima derivada de $f(x)$ em relação a $x$.
+
+Temos, por exemplo, que a série de Taylor para as funções exponencial, seno e cosseno é:
+\begin{align*}
+	e^x=\sum_{n=0}^{\inf}\dfrac{1}{n!}x^n&=1+x+\dfrac{1}{2!}x^2+\dfrac{1}{3!}x^3+...\\
+	sen(x)&=\sum_{n=0}^{\inf}\dfrac{(-1)^n}{(2n+1)!}x^{2n+1}\\
+	cos(x)&=\sum_{n=0}^{\inf}\dfrac{(-1)^n}{(2n)!}x^{2n}
+\end{align*}
+
+Uma vez definidas essas séries para algumas funções, podemos nos perguntar, novamente, como calcular a exponencial de $A$. No entanto, podemos responder essa pergunta de uma forma um pouco mais adequada.
+\begin{equation*}
+	e^A=I+A+\dfrac{1}{2!}A^2+\dfrac{1}{3!}A^3+...+\dfrac{1}{n!}A^n+...
+\end{equation*}
+
+A partir dessa expressão, podemos calcular "facilmente" a exponencial de uma matriz! Para, de fato, facilitar nossos cálculos, vejamos o caso em que $A$ é uma matriz diagonalizável.
+
+\subsection{Caso Diagonalizável}
+
+Seja $A_{n\times n}$ uma matriz quadrada diagonalizável. Ou seja, temos $A=SDS^{-1}$. Adicionando essa informação à série de Taylor da exponencial, teremos o seguinte:
+
+\begin{align*}
+	e^A&=I+A+\dfrac{1}{2!}A^2+\dfrac{1}{3!}A^3+...+\dfrac{1}{n!}A^n+...\\
+	e^A&=I+SDS^{-1}+\dfrac{1}{2!}SDS^{-1}SDS^{-1}+\dfrac{1}{3!}SDS^{-1}SDS^{-1}SDS^{-1}+...+\dfrac{1}{n!}(SDS^{-1})^n+...\\
+	e^A&=SIS^{-1}+SDS^{-1}+\dfrac{1}{2!}SD^2S^{-1}+\dfrac{1}{3!}SD^3S^{-1}+...+\dfrac{1}{n!}SD^nS^{-1}+...\\
+	e^A&=S(I+D+\dfrac{1}{2!}D^2+\dfrac{1}{3!}D^3+...)\\
+	e^A&=Se^DS{-1}
+\end{align*}
+
+Sabemos calcular $e^D$, basta aplicar a função exponencial nas entradas da diagonal principal, fazendo $e^{\lambda_i}$. Além disso, também sabemos calcular a matriz $S$, basta pssuirmos os autovetores de $A$.
+
+De forma geral, se $f$ está definida para os autovalores de $A$ e $A$ é diagonalizável, então:
+\begin{equation*}
+	f(A)=Sf(D)S^{-1}
+\end{equation*}
+
+Para finalizar, enumeremos algumas observações importantes:
+\begin{itemize}
+	\item Se $\lambda$ é autovalor de $A$, então $e^\lambda$ é autovalor de $e^A$
+	\item $det(e^A)=e^\lambda_1e^\lambda_2...e^\lambda_n=e^(\lambda_1+\lambda_2+...+\lambda_n)=e^{tr(A)}$
+	\item $e^A$ é sempre inversível, pois $det(e^A)\neq 0$
+\end{itemize}
+
+\subsection{Conclusão}
+Neste capítulo foram apresentados os conceitos de cálculo funcional e a explicação de seu caso diagonaizável. Note que ganhamos um ferramental poderoso, pois podemos aplicar (quase) qualquer função a uma matriz. Nas próximas aulas continuaremos explorando o cálculo funcional. 
+
 \end{document}
 
