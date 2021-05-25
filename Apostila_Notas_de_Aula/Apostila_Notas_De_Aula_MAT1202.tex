@@ -1435,5 +1435,98 @@ Para finalizar, enumeremos algumas observações importantes:
 \subsection{Conclusão}
 Neste capítulo foram apresentados os conceitos de cálculo funcional e a explicação de seu caso diagonaizável. Note que ganhamos um ferramental poderoso, pois podemos aplicar (quase) qualquer função a uma matriz. Nas próximas aulas continuaremos explorando o cálculo funcional. 
 
+\section{Cálculo Funcional: Caso Não Diagonalizável}
+
+\subsection{Lembrando a aula anterior}
+
+Na última semana foi discutido o cálculo funcional em seu caso diagonalizável. Lembremos:
+
+Dada $f$ uma função definida nos autovalores de $A_{n\times n}$	e $f(x)=\sum_{i=0}^{\inf}a_ix^i$, então, $f(A)=a_0I+a_1A+a_2A^2+...$\\
+
+Se $A=SDS^{-1}$, então $f(A)=Sf(D)S^{-1}$.
+
+\subsection{Caso não diagonalizável}
+
+Para calcular $f(A)$, sendo $A_{n\times n}$ uma matriz não diagonalizável, seguiremos o seguinte algoritmo:
+\begin{enumerate}
+	\item Determinar $p(\lambda)=(\lambda I-A)$
+	\item Determinar os autovalores de $A$ com suas respectivas multiplicidades
+	\item Determinar o polinômio $q$ de grau $n-1$, tal que, para cada autovalor $\lambda_i$:
+	\begin{align*}
+		q(\lambda_i)&=f(\lambda_i)\\
+		q'(\lambda_i)&=f'(\lambda_i)\\
+		q^{m_i-1}(\lambda_i)&=f^{m_i-1}(\lambda_i)
+	\end{align*}, onde $m_i$ é a multiplicidade de $\lambda_i$
+	\item $f(A)=q(A)$
+\end{enumerate}
+
+\subsubsection{Exemplo 1}
+
+Seja $A$ a matriz abaixo. Calcule $f(A)$ sabendo que $f(x)=x^{150}$.
+\begin{equation*}
+	A=\begin{pmatrix}
+		3 & 1 \\
+		0 & 3
+	\end{pmatrix}
+\end{equation*}
+
+\textbf{Solução:}
+
+É fácil calcular que os autovalores de $A$ são $\lambda_1=3$ com multiplicidade $m_1=2$.
+
+Neste caso, temos $n=2$, logo o polinômio $q$ terá grau $n-1=2-1=1$: $q(x)=ax+b$. Precisamos calcular $a$ e $b$.
+
+Sabemos que 
+\begin{equation*}
+	\begin{cases}
+		q(3)=f(3)\\q'(3)=f'(3)
+	\end{cases}
+\end{equation*}
+
+Com isso, temos:
+
+\begin{equation*}
+	\begin{cases}
+		3a+b=3^{150}\\a=150\cdot 3^{149}
+	\end{cases}
+\end{equation*}
+
+Bastam algumas contas para calcular $a$ e $b$ e teremos nosso polinômio:
+\begin{equation*}
+	q(x)=150\cdot 3^{149}\cdot x-149\cdot 3^{150}
+\end{equation*}
+
+Por fim, fazemos $f(A)=q(A)$:
+\begin{align*}
+	A^{150}&=150\cdot 3^{149}\cdot A-149\cdot 3^{150}\cdot I\\
+	A^{150}&=\begin{pmatrix}
+		1\cdot 3^{150}&150\cdot 3^{149}  \\
+		0& 3^{150}
+	\end{pmatrix}	
+\end{align*}
+
+\subsection{Justificativa Intuitiva}
+
+Vejamos uma justificativa pouco formal, para o fato de $f(A)=q(A)$.
+
+Se $f$ for um polinômio, temos que:
+\begin{align*}
+	h(x)&=f(x)-q(x)\\
+	h(\lambda_i)=h'(\lambda_i)&=...=h^{m_i-1}(\lambda_i)=0 \mbox{ pois } h(\lambda_i)=f(\lambda_i)-q(\lambda_i)
+\end{align*}
+
+Note que todos os autovalores são raízes de $h(x)$, logo,
+\begin{align*}
+	h(x)&=p(x)\cdot k(x)\\
+	h(A)&=p(A)\cdot k(A)=0 \mbox{ lembre-se que p(A)=0}\\
+	f(A)&-q(A)=0\\
+	f(A)&=q(A)
+\end{align*}
+
+Se $f$ não for um polinômio, sabemos que ela pode ser aproximada por um, via Série de Taylor, por exemplo. Com isso, podemos descrever uma justificativa similar para verificar que a propriedade $f(A)=q(A)$ vale.
+
+\subsection{Conclusão}
+Neste capítulo foi o cálculo funcional para o caso diagonalisável e apresentado o caso não diagonalizável. Nas próximas aulas entraremos em sistemas de equações de diferenças.
+
 \end{document}
 
