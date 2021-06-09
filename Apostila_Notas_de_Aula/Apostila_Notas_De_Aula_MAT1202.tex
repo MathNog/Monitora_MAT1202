@@ -1435,5 +1435,347 @@ Para finalizar, enumeremos algumas observações importantes:
 \subsection{Conclusão}
 Neste capítulo foram apresentados os conceitos de cálculo funcional e a explicação de seu caso diagonaizável. Note que ganhamos um ferramental poderoso, pois podemos aplicar (quase) qualquer função a uma matriz. Nas próximas aulas continuaremos explorando o cálculo funcional. 
 
+\section{Cálculo Funcional: Caso Não Diagonalizável}
+
+\subsection{Lembrando a aula anterior}
+
+Na última semana foi discutido o cálculo funcional em seu caso diagonalizável. Lembremos:
+
+Dada $f$ uma função definida nos autovalores de $A_{n\times n}$	e $f(x)=\sum_{i=0}^{\inf}a_ix^i$, então, $f(A)=a_0I+a_1A+a_2A^2+...$\\
+
+Se $A=SDS^{-1}$, então $f(A)=Sf(D)S^{-1}$.
+
+\subsection{Caso não diagonalizável}
+
+Para calcular $f(A)$, sendo $A_{n\times n}$ uma matriz não diagonalizável, seguiremos o seguinte algoritmo:
+\begin{enumerate}
+	\item Determinar $p(\lambda)=(\lambda I-A)$
+	\item Determinar os autovalores de $A$ com suas respectivas multiplicidades
+	\item Determinar o polinômio $q$ de grau $n-1$, tal que, para cada autovalor $\lambda_i$:
+	\begin{align*}
+		q(\lambda_i)&=f(\lambda_i)\\
+		q'(\lambda_i)&=f'(\lambda_i)\\
+		q^{m_i-1}(\lambda_i)&=f^{m_i-1}(\lambda_i)
+	\end{align*}, onde $m_i$ é a multiplicidade de $\lambda_i$
+	\item $f(A)=q(A)$
+\end{enumerate}
+
+\subsubsection{Exemplo 1}
+
+Seja $A$ a matriz abaixo. Calcule $f(A)$ sabendo que $f(x)=x^{150}$.
+\begin{equation*}
+	A=\begin{pmatrix}
+		3 & 1 \\
+		0 & 3
+	\end{pmatrix}
+\end{equation*}
+
+\textbf{Solução:}
+
+É fácil calcular que os autovalores de $A$ são $\lambda_1=3$ com multiplicidade $m_1=2$.
+
+Neste caso, temos $n=2$, logo o polinômio $q$ terá grau $n-1=2-1=1$: $q(x)=ax+b$. Precisamos calcular $a$ e $b$.
+
+Sabemos que 
+\begin{equation*}
+	\begin{cases}
+		q(3)=f(3)\\q'(3)=f'(3)
+	\end{cases}
+\end{equation*}
+
+Com isso, temos:
+
+\begin{equation*}
+	\begin{cases}
+		3a+b=3^{150}\\a=150\cdot 3^{149}
+	\end{cases}
+\end{equation*}
+
+Bastam algumas contas para calcular $a$ e $b$ e teremos nosso polinômio:
+\begin{equation*}
+	q(x)=150\cdot 3^{149}\cdot x-149\cdot 3^{150}
+\end{equation*}
+
+Por fim, fazemos $f(A)=q(A)$:
+\begin{align*}
+	A^{150}&=150\cdot 3^{149}\cdot A-149\cdot 3^{150}\cdot I\\
+	A^{150}&=\begin{pmatrix}
+		1\cdot 3^{150}&150\cdot 3^{149}  \\
+		0& 3^{150}
+	\end{pmatrix}	
+\end{align*}
+
+\subsection{Justificativa Intuitiva}
+
+Vejamos uma justificativa pouco formal, para o fato de $f(A)=q(A)$.
+
+Se $f$ for um polinômio, temos que:
+\begin{align*}
+	h(x)&=f(x)-q(x)\\
+	h(\lambda_i)=h'(\lambda_i)&=...=h^{m_i-1}(\lambda_i)=0 \mbox{ pois } h(\lambda_i)=f(\lambda_i)-q(\lambda_i)
+\end{align*}
+
+Note que todos os autovalores são raízes de $h(x)$, logo,
+\begin{align*}
+	h(x)&=p(x)\cdot k(x)\\
+	h(A)&=p(A)\cdot k(A)=0 \mbox{ lembre-se que p(A)=0}\\
+	f(A)&-q(A)=0\\
+	f(A)&=q(A)
+\end{align*}
+
+Se $f$ não for um polinômio, sabemos que ela pode ser aproximada por um, via Série de Taylor, por exemplo. Com isso, podemos descrever uma justificativa similar para verificar que a propriedade $f(A)=q(A)$ vale.
+
+\subsection{Conclusão}
+Neste capítulo foi o cálculo funcional para o caso diagonalisável e apresentado o caso não diagonalizável. Nas próximas aulas entraremos em sistemas de equações de diferenças.
+
+
+\section{Sistema de Equações de Diferenças}
+
+\subsection{Equações de Diferenças}
+
+Um sistema de equações de diferenças está associado à problemas do mundo discreto, onde temos informações pontuais de um sistema qualquer, em vez de informações contínuas. O exemplo que será abordado é o crescimento populacional.
+
+Considere a equação:
+\begin{equation*}
+	y_{k+1}=f(y,k)\mbox{ onde }k\in N
+\end{equation*}
+
+A equação acima é uma equação de diferenças de \textbf{primeira ordem}, pois o valor $y_{k+1}$ depende apenas de $y_k$. Logo, uma equação de ordem $n$ é definida pelo fato de $y_{k+1}$ depender de $n$ valores anteriores.
+
+\textbf{Ex:} a equação $y_{k+1}=c\cdot y_k\mbox{ ,onde }k\in N \mbox{ e }c\in R$ possui solução da forma da sequência $y_1,y_2,y_3,...$
+
+Estamos interessados em buscar a solução geral da equação e avaliar seu comportamento quando $k\to \infty$.
+
+Para este exemplo, temos:
+\begin{align*}
+	y_1&=c\cdot y_0\\
+	y_2&=c\cdot y_1=c^2\cdot y_0\\
+	y_k&=c\cdot y_{k-1}=c^k\cdot y_0
+\end{align*}
+
+Logo, avaliando no limite:
+\begin{equation*}
+	\lim_{k\to \infty}y_k=\begin{cases}0\mbox{, se }|c|<1\\ y_0\mbox{, se }c=1\\ \not\exists\mbox{, se caso contrário} 
+	\end{cases}
+\end{equation*}
+
+\subsection{Sistema de Equação de Diferenças}
+Podemos generalizar a definição de uma equação de diferenças, passando a enxergar $y_k$ não mais como um valor único, mas um vetor coluna de valores $u_k$:
+\begin{equation*}
+	u_{k+1}=A\cdot u_k
+\end{equation*}
+onde $A$ é uma matriz $n\times n$ e $u_k\in R^n$.\\
+
+Dito isso, já sabemos que a solução geral é:
+\begin{equation*}
+	u_{k+1}=A^k\cdot u_0
+\end{equation*}
+
+\subsubsection{Exemplos}
+Considere que, a cada ano, 10\% da população do Estado do Rio se ,uda para a capital e 20\% da população da capital se muda para outra cidade do estado.
+
+\textbf{(a)} Determine o sistema que modela a situação\\
+
+Podemos construir o seguinte vetor coluna $u_k=(y_k,z_k)^T$ onde $y_k$ é a população do estado e $z^k$ é a população da capital e $k$ é o ano. Com as informações do enunciado, podemos construir o seguinte sistema:
+\begin{equation*}
+	\begin{cases}
+		y+{k+1}=0.9\cdot y_k+0.2\cdot z_k\\
+		z{k+1}=0.1\cdot y_k+0.8\cdot z_k
+	\end{cases}
+\end{equation*}
+
+Pense e veja se você concorda com essas equações antes de continuar! Montar corretamente o sistema é essencial!
+
+Podemos, então, reescrever o sistema como:
+$u_{k+1}\begin{pmatrix}
+	0.9 & 0.2 \\
+	0.1 & 0.8
+\end{pmatrix}u_k$
+
+\textbf{(b)} A população em 2019 era de $y=15$ e $z=7$ milhões. Qual será a população nos próximos anos?\\
+
+\begin{align*}
+	u_1&=\begin{pmatrix}
+		0.9 & 0.2 \\
+		0.1 & 0.8
+	\end{pmatrix}\begin{pmatrix}
+		15 \\
+		7
+	\end{pmatrix}=
+	\begin{pmatrix}
+		14.9 \\
+		7.1
+	\end{pmatrix}\\
+	u_2&=\begin{pmatrix}
+		0.9 & 0.2 \\
+		0.1 & 0.8
+	\end{pmatrix}\begin{pmatrix}
+		14.9 \\
+		7.1
+	\end{pmatrix}=
+	\begin{pmatrix}
+		14.83 \\
+		7.17
+	\end{pmatrix}
+\end{align*}
+
+\textbf{(c)} Estude o comportamento do sistema quando $t\to \infty$.\\
+
+A estratégia para essa análise está expressa nos passos a seguir:
+
+\begin{align*}
+	u_{k+1}&=A^ku_0\\
+	u_{k+1}&=SD^{K}S^{-1}u_0\\
+	u{k+1}&=S\begin{pmatrix}
+		\lambda_1^k & 0 \\
+		0 & \lambda_2^k
+	\end{pmatrix}S^{-1}u_0
+\end{align*}
+
+O polinômio característico de $A$ é $p(\lambda)=\lambda^2-1.7\lambda+0.7$. Com ele, calculamos $\lambda_1=1$, $\lambda_2=0.7$, $v_1=\begin{pmatrix}
+	2/3 \\
+	1/3
+\end{pmatrix}$ e $v_2=\begin{pmatrix}
+	1/3 \\
+	-1/3
+\end{pmatrix}$.
+
+Com esses valores em mãos:
+
+\begin{equation*}
+	A^k=\begin{pmatrix}
+		2/3 & 1/3 \\
+		1/3 & -1/3
+	\end{pmatrix}
+	\begin{pmatrix}
+		1^k & 0 \\
+		0 & 0.7^k
+	\end{pmatrix}
+	\begin{pmatrix}
+		1 & 1 \\
+		1 & -2
+	\end{pmatrix}	
+\end{equation*}
+
+Portanto,
+\begin{align*}
+	U_{k+1}&=\begin{pmatrix}
+		2/3 & 1/3 \\
+		1/3 & -1/3
+	\end{pmatrix}
+	\begin{pmatrix}
+		1^k & 0 \\
+		0 & 0.7^k
+	\end{pmatrix}
+	\begin{pmatrix}
+		1 & 1 \\
+		1 & -2
+	\end{pmatrix}
+	\begin{pmatrix}
+		y_0 \\
+		z_0
+	\end{pmatrix}=...\\
+	u_{k+1}&=(y_0+z+0)\begin{pmatrix}
+		2/3 \\
+		1/3
+	\end{pmatrix}+0.7^k(y_0-2z_0)\begin{pmatrix}
+		1/3 \\
+		-1/3
+	\end{pmatrix}
+\end{align*}
+
+Finalmente, avaliando o limite, temos:
+\begin{equation*}
+	\lim_{k\to\infty}u_{k}=(y_0+z_0)\begin{pmatrix}
+		2/3 \\
+		1/3
+	\end{pmatrix}
+\end{equation*}
+
+\subsubsection{Comentários Importantes}
+
+Podemos enumerar algumas considerações importantes sobre um sistema de equações de diferenças, principalmente em relação a sua estabilidade.\\
+
+Note que $u_k=c_1\lambda_1^kv_1+c_2\lambda_2^kv_2$.
+
+O sistema $u+{+1}=A^ku_k$ é:
+\begin{enumerate}
+	\item Assintoticamente estável se $|\lambda_i|<1$, $\forall i$.
+	\item Estável se $\exists j$, tal que $|\lambda_j|=1$ e $|\lambda_j|<1$ para os demais $j$.
+	\item Instável se $|\lambda_1|>1$ para algum $i$.
+\end{enumerate}
+
+\subsection{Crescimento Populacional}
+
+Imagine que uma população de coelhos que possuem idade máxima de 15 anos. Dividimos a população em 3 faixas etárias: $[0,5],[5,10],[10,15]$. Sabemos que:
+\begin{itemize}
+	\item 50\% de $[0,5]$ sobrevive
+	\item 25\% de $[5,10]$ sobrevive
+	\item De $[0,5]$ não há reprodução.
+	\item De $[5,10]$ nascem 4 filhotes por fêmea.
+	\item De $[10,15]$ nascem 3 filhotes por fêmea.
+\end{itemize}
+
+\textbf{(a)} Monte o sistema\\
+
+\begin{equation*}
+	\begin{pmatrix}
+		0 & 4 & 3 \\
+		1/2 & 0 & 0 \\
+		0 & 1/4 & 0
+	\end{pmatrix}
+\end{equation*}
+
+A matriz acima é chamada \textbf{Matriz de Leslie} e descreve a evolução da população. As colunas e linhas se referem, da esquerda para direita e de cima para baixo, às faixas etárias $[0,5],[5,10],[10,15]$ respectivamente. Sendo assim, a primeira linha traz a informação do número de filhotes novos, pois é a linha da faixa de $[0,5]$. As demais mostram quantos sobrevivem de uma faixa para outra. O número $1/2$ na primeira coluna $([0,5])$ e segunda linha $([5,10])$ quer dizer que 50\% dos coelhos vivem entre as faixas de $[0,5]$ e $[5,10]$.\\
+
+\textbf{(b)} Sendo a população inicial composta de 100 coelhos em cada fase, calcule a população depois de uma geração.
+\begin{equation*}
+	u_1=\begin{pmatrix}
+		0 & 4 & 3 \\
+		1/2 & 0 & 0 \\
+		0 & 1/4 & 0
+	\end{pmatrix}\begin{pmatrix}
+		100 \\
+		100 \\
+		100
+	\end{pmatrix}=\begin{pmatrix}
+		700 \\
+		50 \\
+		25
+	\end{pmatrix}
+\end{equation*}\\
+
+\textbf{(c)} Calcule mais uma geração.
+\begin{equation*}
+	u_2=\begin{pmatrix}
+		0 & 4 & 3 \\
+		1/2 & 0 & 0 \\
+		0 & 1/4 & 0
+	\end{pmatrix}\begin{pmatrix}
+		700 \\
+		50 \\
+		25
+	\end{pmatrix}=\begin{pmatrix}
+		1437,5 \\
+		137,5 \\
+		87,5
+	\end{pmatrix}
+\end{equation*}
+
+\textbf{(d)} Estude o limite do sistema
+
+Ao calcular as raízes do polinômio característico da Matriz de Leslie do sistema, obtemos $\lambda_1=3/2$, $\lambda_2=(-3+\sqrt{5})/4$ e $\lambda_3=(-3-\sqrt{5})/4$.
+
+Como o sistema possui um autovalor de módulo maior que 1, ele será instável. Sendo assim, $\lim_{k\to\infty}u_k=\infty$
+
+Como o maior autovalor é $3/2$, será o seu autovetor associado que dominará o sistema no limite do infinito. Será o vetor $\begin{pmatrix}
+	1 \\
+	1/3 \\
+	1/18
+\end{pmatrix}$ que ditará a proporção da quantidade de coelhos com o crescimento da população.
+
+\subsection{Conclusão}
+Neste capítulo foi apresentado o conceito de equações de diferenças e os sistemas de equações de equações de diferenças. Foi apresentada, também, a aplicação dessa teoria em problemas de crescimento populacional. Na próxima, e última, aula veremos as Cadeias de Markov, que são um tipo de sistema de equações de diferenças.
+
 \end{document}
 
