@@ -1777,5 +1777,107 @@ Como o maior autovalor é $3/2$, será o seu autovetor associado que dominará o
 \subsection{Conclusão}
 Neste capítulo foi apresentado o conceito de equações de diferenças e os sistemas de equações de equações de diferenças. Foi apresentada, também, a aplicação dessa teoria em problemas de crescimento populacional. Na próxima, e última, aula veremos as Cadeias de Markov, que são um tipo de sistema de equações de diferenças.
 
+
+\section{Cadeias de Markov}
+
+\subsection{Definição e Apresentação}
+
+\textbf{Def: }Se o estado de um sistema em $k+1$ pode ser previsto, unicamente, a partir do estado em $k$, então o processo de mudança de estados do sistema é denominado \textit{Cadeia de Markov}.
+
+O que esta definição quer dizer que, uma cadeia de Marvok é um sistema de equação de diferenças de primeira ordem, no qual o valor de $u_{k+1}$, para utilizar a mesma notação já conhecida, pode ser previsto se soubermos o valor de $u_k$.
+
+Definimos o sistema de equações de uma Cadeia de Markov como:
+\begin{equation*}
+	u_{k+1}=P\cdot u_k
+\end{equation*}
+
+onde $P$ é a matriz de transição de estados do sistema.
+
+Cada entrada $p_{ij}$ da matriz de transição $P$ é a probabilidade que o sistema possui de ir do estado $j$ para o estado $i$, ou seja, $0\leq p_{ij}\leq1$. Além disso, a soma dos elementos de cada coluna de $P$ deve ser exatamente 1. Você consegue perceber essa necessidade? Toda matriz $P$ com essas características é denominada \textit{Matriz de Markov}.
+
+\subsubsection{Exemplo}
+
+Uma locadora de carro possui 3 lojas, A, B e C em uma cidade qualquer. Um cliente pode alugar um carro em qualquer loja. Considere que, se um carro for alocado na loja:
+\begin{itemize}
+	\item A
+	\begin{itemize}
+		\item 80\% devolve em A
+		\item 10\% devolve em B
+		\item 10\% devolve em C
+	\end{itemize}
+	\item B
+	\begin{itemize}
+		\item 30\% devolve em A
+		\item 20\% devolve em B
+		\item 50\% devolve em C
+	\end{itemize}
+	\item C
+	\begin{itemize}
+		\item 20\% devolve em A
+		\item 60\% devolve em B
+		\item 20\% devolve em C
+	\end{itemize}
+\end{itemize}
+
+\textbf{(a)} Determine a matriz de Transição $P$.
+
+Construiremos a matriz assumindo as colunas como as lojas de locação e as linhas como as lojas de devolução, isto é, as colunas, da esquerda para a direita, são as lojas A, B e C enquanto as linhas, de cima para baixo são as lojas A, B e C.
+\begin{equation*}P=
+	\begin{pmatrix}
+		0.8 & 0.3 & 0.2 \\
+		0.1 & 0.2 & 0.6 \\
+		0.1 & 0.5 & 0.2
+	\end{pmatrix}
+\end{equation*}
+
+Note, por exemplo, que a etrada $p_{1,1}$ quer dizer que 80\% dos carros alugados em A são devolvidos em A. A entrada $p_{3,2}$, por outro lado, mostra que 50\% dos carros alugados em B são devolvidos em C.\\
+
+\textbf{(b)} Se um carro for alugado em B, determine, ao longo do tempo, a distribuição de probabilidade dele estar em cada uma das lojas.
+
+Vamos definir nosso vetor $u_0=(0,1,0)^T$, o que quer dizer que há 100\% de probabilidade do carro estar na loja B, onde ele foi alugado. 
+
+Sabemos que $u_{k+1}=P\cdot u_k$, sendo $u_{k+1}$ o vetor das probabilidades do carro estar em cada uma das lojas. Como as contas são fáceis, exibimos apenas alguns resultados.
+\begin{equation*}
+	u_2=\begin{pmatrix}
+		0.4 \\
+		0.37 \\
+		0.23
+	\end{pmatrix},
+	u_3=\begin{pmatrix}
+		0.477 \\
+		0.252 \\
+		0.271
+	\end{pmatrix},
+	u_{11}=\begin{pmatrix}
+		0.577 \\
+		0.23 \\
+		0.213
+	\end{pmatrix}
+\end{equation*} \\
+
+\textbf{(c)} Qual o comportamento de $u_k$ quando $k\to \infty$?
+
+Precisamos calcular os autovalores de $P$ e descobrir o autovetor associado ao maior autovalor em módulo. Novamente, mostramos os resultados:
+\begin{equation*}
+	\lambda_1=1, \lambda_2=0.54, \lambda_3=-0.34
+\end{equation*}
+
+O autovetor associado ao autovalor $\lambda_1=1$ é $v_1=(0.87,0.36,0.33)^T$.
+
+Logo, $\lim_{k\to\infty}u+k=v_1=(0.87,0.36,0.33)^T$.
+
+Já sabemos que o estado estacionário do sistema ocorre em $A\cdot v_1=v_1$.
+
+\subsubsection{Propriedades da Matriz de Markov}
+
+\begin{enumerate}
+	\item A matriz de Markov é não negativa e os elementos da colunas somam 1
+	\item $\lambda=1$ é autovalor de $P$
+	\item $v_1$ é não negativo e corresponde ao estado estacionário
+	\item Os autovalores restantes satisfazem $|\lambda_i|\leq1$
+\end{enumerate}
+\subsection{Conclusão}
+Neste (último) capítulo foi apresentado o conceito de Cadeias de Markov. De certo modo, nada muito novo foi aprendido, uma vez que essa cadeia é um sistema de equações de diferenças. Com essa aula, finalizamos o curso de MAT1202. Espero que este material tenha sido útil!
+
 \end{document}
 

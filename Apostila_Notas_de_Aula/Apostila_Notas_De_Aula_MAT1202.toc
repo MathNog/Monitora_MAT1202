@@ -75,3 +75,8 @@
 \contentsline {subsubsection}{\numberline {12.2.2}Comentários Importantes}{32}{}%
 \contentsline {subsection}{\numberline {12.3}Crescimento Populacional}{33}{}%
 \contentsline {subsection}{\numberline {12.4}Conclusão}{34}{}%
+\contentsline {section}{\numberline {13}Cadeias de Markov}{34}{}%
+\contentsline {subsection}{\numberline {13.1}Definição e Apresentação}{34}{}%
+\contentsline {subsubsection}{\numberline {13.1.1}Exemplo}{34}{}%
+\contentsline {subsubsection}{\numberline {13.1.2}Propriedades da Matriz de Markov}{35}{}%
+\contentsline {subsection}{\numberline {13.2}Conclusão}{35}{}%

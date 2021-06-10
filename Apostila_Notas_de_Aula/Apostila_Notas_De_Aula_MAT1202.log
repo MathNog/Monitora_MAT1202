@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.6.6)  9 JUN 2021 11:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.6.6)  10 JUN 2021 13:22
 entering extended mode
 **./Apostila_Notas_De_Aula_MAT1202.tex
 (Apostila_Notas_De_Aula_MAT1202.tex
@@ -986,7 +986,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[34] (Apostila_Notas_De_Aula_MAT1202.aux)
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 1833--1834
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1856--1857
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[35] (Apostila_Notas_De_Aula_MAT1202.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1016,9 +1034,9 @@ TeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/matno_5/AppData/Local/Pr
 ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/matno_5/AppDat
 a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/mat
 no_5/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Apostila_Notas_De_Aula_MAT1202.pdf (34 pages, 340696 bytes).
+Output written on Apostila_Notas_De_Aula_MAT1202.pdf (35 pages, 346552 bytes).
 PDF statistics:
- 179 PDF objects out of 1000 (max. 8388607)
+ 182 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
